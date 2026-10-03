@@ -1,0 +1,1856 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kuiz Bahasa Arab Tahun 2</title>
+<meta name="description" content="Kuiz topikal Bahasa Arab Tahun 2 KSSR daripada buku teks Dewan Bahasa dan Pustaka: empat unit, 80 soalan termasuk KBAT, pembayang, penerangan dan slip keputusan untuk cikgu.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@600;700;800&family=Scheherazade+New:wght@500;700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='78' font-size='78'%3E%F0%9F%90%AA%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --ground:#FFF7EA; --ground-2:#FFE9CF;
+  --surface:#FFFFFF; --surface-2:#FFFBF3;
+  --ink:#2C2A52; --muted:#6F6B9B; --line:#2C2A52; --shade:#2C2A52;
+  --accent:#0F7F70; --accent-ink:#FFFFFF; --pop:#EF6FA0; --star:#FFC63D; --star-off:#EDE5D4;
+  --good:#12A26E; --good-bg:#DCF7EC; --bad:#E2456A; --bad-bg:#FFE4EA;
+  --blank:#FFEBC4; --hint-bg:#FFF3D0; --hint-ink:#6B4E00;
+  --unit:#F7A65A;
+  --r-lg:28px; --r-md:20px; --r-sm:13px;
+  --arabic:"Scheherazade New","Noto Naskh Arabic","Geeza Pro","Traditional Arabic","Arial",serif;
+  --display:"Baloo 2","SF Pro Rounded",ui-rounded,"Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito","SF Pro Rounded",ui-rounded,"Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#181630; --ground-2:#211D3E;
+    --surface:#292350; --surface-2:#312A5C;
+    --ink:#F4F0FF; --muted:#ADA6D4; --line:#6053A4; --shade:#0B0917;
+    --accent:#5ED3BF; --accent-ink:#0B2A25; --pop:#FF92BC; --star:#FFD25E; --star-off:#3F3765;
+    --good:#3ED79E; --good-bg:#153D31; --bad:#FF7490; --bad-bg:#45192A;
+    --blank:#3A3168; --hint-bg:#3A3118; --hint-ink:#FFE290;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#181630; --ground-2:#211D3E;
+  --surface:#292350; --surface-2:#312A5C;
+  --ink:#F4F0FF; --muted:#ADA6D4; --line:#6053A4; --shade:#0B0917;
+  --accent:#5ED3BF; --accent-ink:#0B2A25; --pop:#FF92BC; --star:#FFD25E; --star-off:#3F3765;
+  --good:#3ED79E; --good-bg:#153D31; --bad:#FF7490; --bad-bg:#45192A;
+  --blank:#3A3168; --hint-bg:#3A3118; --hint-ink:#FFE290;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:var(--body); font-weight:700; font-size:16.5px; line-height:1.55;
+  min-height:100vh; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+button{font:inherit;color:inherit;cursor:pointer}
+button:disabled{cursor:not-allowed}
+:focus-visible{outline:3px solid var(--pop);outline-offset:3px;border-radius:12px}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--muted)}
+
+/* mata berkelip pada setiap rakan */
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4.6s ease-in-out infinite}
+.eye.b{animation-delay:.08s}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+
+/* ---------- latar belakang terapung ---------- */
+.sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.sky i{position:absolute;display:block;border-radius:50%;background:var(--ground-2);opacity:.75;animation:drift 22s ease-in-out infinite}
+.sky i:nth-child(1){width:230px;height:230px;left:-70px;top:4%;animation-duration:26s}
+.sky i:nth-child(2){width:150px;height:150px;right:-40px;top:22%;animation-duration:19s;animation-delay:-4s}
+.sky i:nth-child(3){width:300px;height:300px;right:-110px;bottom:6%;animation-duration:31s;animation-delay:-9s}
+.sky i:nth-child(4){width:120px;height:120px;left:12%;bottom:12%;animation-duration:23s;animation-delay:-14s}
+@keyframes drift{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(14px,-26px,0)}}
+
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:16px 16px 44px}
+
+/* ---------- bar atas ---------- */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 2px 4px}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:16px;color:var(--muted)}
+.brand b{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--accent);color:var(--accent-ink);border:2.5px solid var(--line);box-shadow:0 2.5px 0 var(--line);font-size:15px}
+.bar-r{display:flex;gap:8px}
+.icon-btn{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--surface);border:2.5px solid var(--line);box-shadow:0 3px 0 var(--line);transition:transform .12s,box-shadow .12s}
+.icon-btn:active{transform:translateY(3px);box-shadow:0 0 0 var(--line)}
+.icon-btn svg{width:21px;height:21px}
+
+/* ---------- hero ---------- */
+.hero{text-align:center;padding:16px 4px 4px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,8vw,58px);line-height:1.02;margin:0 0 6px;letter-spacing:-.5px}
+.hero h1 .w{display:inline-block;animation:pop-in .5s cubic-bezier(.2,1.5,.4,1) both}
+.hero h1 .w:nth-child(2){animation-delay:.07s}
+.hero h1 .w:nth-child(3){animation-delay:.14s}
+.hero h1 .w:nth-child(4){animation-delay:.21s}
+.hero h1 .w:nth-child(5){animation-delay:.28s}
+@keyframes pop-in{0%{opacity:0;transform:translateY(16px) scale(.86)}100%{opacity:1;transform:none}}
+.edition{display:inline-block;font-family:var(--display);font-weight:700;font-size:15px;padding:4px 14px;border-radius:999px;background:var(--star);color:#4A3600;border:2.5px solid var(--line);box-shadow:0 3px 0 var(--line);transform:rotate(-1.5deg)}
+.hero p{max-width:42em;margin:14px auto 0;color:var(--muted);font-weight:700;text-wrap:pretty}
+.parade{display:flex;justify-content:center;gap:2px;flex-wrap:wrap;margin:14px 0 2px;min-height:58px}
+.parade svg{width:56px;height:56px;animation:bob 2.6s ease-in-out infinite}
+.parade svg:nth-child(2n){animation-delay:-.4s}
+.parade svg:nth-child(3n){animation-delay:-.9s}
+.parade svg:nth-child(5n){animation-delay:-1.4s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+
+/* ---------- statistik ---------- */
+.stats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0 10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--surface);border:2.5px solid var(--line);box-shadow:0 3px 0 var(--line);font-family:var(--display);font-weight:600;font-size:15px}
+.chip .frac{font-family:var(--body);font-weight:800}
+.chip .frac strong{color:var(--accent);font-weight:800}
+.chip svg{width:18px;height:18px}
+.chip-btn{transition:transform .12s,box-shadow .12s}
+.chip-btn:active{transform:translateY(3px);box-shadow:0 0 0 var(--line)}
+.meter{position:relative;width:74px;height:11px;border-radius:999px;background:var(--star-off);border:2px solid var(--line);overflow:hidden}
+.meter span{position:absolute;inset:0;right:auto;width:0;background:var(--accent);transition:width .6s cubic-bezier(.2,1,.3,1)}
+.reset{display:grid;place-items:center;width:26px;height:26px;margin:-4px -6px -4px 0;border-radius:9px;background:transparent;border:2px solid var(--line);color:var(--muted);transition:transform .35s,color .2s}
+.reset svg{width:14px;height:14px}
+.reset:hover{color:var(--ink)}
+.reset:active{transform:rotate(-180deg)}
+
+/* ---------- kepala bahagian ---------- */
+.section-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:28px 2px 12px}
+.section-h h2{font-family:var(--display);font-weight:700;font-size:24px;margin:0}
+.section-h span{color:var(--muted);font-size:14.5px}
+.theme-h{margin:22px 2px 10px;font-family:var(--display);font-weight:700;font-size:16px;color:var(--muted);display:flex;align-items:center;gap:10px}
+#units > .theme-h:first-child{margin-top:4px}
+.theme-h::after{content:"";flex:1;height:3px;border-radius:999px;background:var(--ground-2)}
+
+/* ---------- kad unit ---------- */
+.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.unit{position:relative;display:flex;gap:12px;align-items:center;text-align:left;width:100%;padding:14px;border-radius:var(--r-lg);background:var(--surface);border:3px solid var(--line);box-shadow:0 5px 0 var(--line);transition:transform .14s,box-shadow .14s}
+.unit:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--line)}
+.unit:active{transform:translateY(4px);box-shadow:0 1px 0 var(--line)}
+.unit .pic{flex:none;display:grid;place-items:center;width:66px;height:66px;border-radius:20px;background:var(--u);border:2.5px solid var(--line)}
+.unit .pic svg{width:52px;height:52px;animation:bob 3s ease-in-out infinite}
+.unit .txt{min-width:0;flex:1}
+.unit .no{display:inline-block;font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.unit h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0;line-height:1.15}
+.unit p{margin:3px 0 0;font-size:13.5px;color:var(--muted);font-weight:700;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-wrap:pretty}
+.stars{display:flex;gap:3px;margin-top:6px}
+.stars svg{width:17px;height:17px}
+.stars .off{opacity:.3}
+.unit .best{position:absolute;top:10px;right:12px;font-family:var(--display);font-weight:700;font-size:13px;color:var(--muted)}
+
+/* ---------- butang rampaian ---------- */
+.mix{display:flex;align-items:center;gap:14px;width:100%;margin-top:18px;padding:16px;text-align:left;border-radius:var(--r-lg);background:linear-gradient(120deg,var(--pop),var(--star));border:3px solid var(--line);box-shadow:0 5px 0 var(--line);color:#3A2200;transition:transform .14s,box-shadow .14s}
+.mix:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--line)}
+.mix:active{transform:translateY(4px);box-shadow:0 1px 0 var(--line)}
+.mix .trio{display:flex;flex:none}
+.mix .trio svg{width:52px;height:52px;margin-left:-14px;animation:bob 2.4s ease-in-out infinite}
+.mix .trio svg:first-child{margin-left:0}
+.mix .trio svg:nth-child(2){animation-delay:-.5s}
+.mix .trio svg:nth-child(3){animation-delay:-1s}
+.mix h3{font-family:var(--display);font-weight:800;font-size:21px;margin:0}
+.mix p{margin:2px 0 0;font-size:14px;font-weight:700}
+.mix .go{flex:none;margin-left:auto;padding:9px 16px;border-radius:999px;background:#FFF;border:2.5px solid var(--line);font-family:var(--display);font-weight:700;color:var(--shade)}
+@media (max-width:560px){.mix{flex-wrap:wrap}.mix .go{margin-left:0;width:100%;text-align:center}}
+
+/* ---------- kaki halaman ---------- */
+.foot{margin-top:34px;text-align:center}
+.keys{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;color:var(--muted);font-size:13.5px;margin-bottom:12px}
+kbd{display:inline-block;min-width:22px;padding:1px 6px;border-radius:7px;background:var(--surface);border:2px solid var(--line);box-shadow:0 2px 0 var(--line);font:inherit;font-size:12.5px;font-weight:800}
+.teacher{margin:0 0 6px}
+.linkbtn{background:none;border:0;padding:0;color:var(--accent);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.foot .privacy{display:flex;gap:9px;align-items:flex-start;justify-content:center;max-width:39em;margin:6px auto 14px;padding:11px 15px;border-radius:16px;border:2px dashed var(--muted);font-size:13.5px;line-height:1.5;text-align:left;text-wrap:pretty;font-weight:700}
+.foot .privacy svg{width:18px;height:18px;flex:none;margin-top:2px}
+.foot .privacy b{color:var(--ink);font-weight:800}
+.source{max-width:39em;margin:0 auto 14px;font-size:13px;color:var(--muted);text-wrap:pretty}
+.credit{font-family:var(--display);font-weight:600;color:var(--muted)}
+.heart{display:inline-block;animation:heartbeat 1.8s ease-in-out infinite}
+@keyframes heartbeat{0%,45%,100%{transform:scale(1)}12%{transform:scale(1.28)}22%{transform:scale(1.06)}32%{transform:scale(1.2)}}
+@media (prefers-reduced-motion:reduce){
+  .sky i,.parade svg,.unit .pic svg,.mix .trio svg,.heart,.hero h1 .w,.eye,.res .pic svg,.qtop .pic svg,.show .em,.show .big,.hero-ar{animation:none}
+}
+
+/* ---------- kuiz ---------- */
+.quiz{max-width:720px;margin:0 auto}
+.qbar{display:flex;align-items:center;gap:12px;margin:8px 0 16px}
+.back{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:14px;background:var(--surface);border:2.5px solid var(--line);box-shadow:0 3px 0 var(--line)}
+.back svg{width:20px;height:20px}
+.back:active{transform:translateY(3px);box-shadow:0 0 0 var(--line)}
+.track{flex:1;height:16px;border-radius:999px;background:var(--surface);border:2.5px solid var(--line);overflow:hidden}
+.track span{display:block;height:100%;width:0;background:var(--unit);transition:width .45s cubic-bezier(.2,1,.3,1)}
+.count{flex:none;font-family:var(--display);font-weight:700;font-size:15px;color:var(--muted);min-width:3.2em;text-align:right}
+
+.card{position:relative;padding:20px;border-radius:var(--r-lg);background:var(--surface);border:3px solid var(--line);box-shadow:0 6px 0 var(--line)}
+.qtop{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.qtop .pic{flex:none;display:grid;place-items:center;width:62px;height:62px;border-radius:20px;background:var(--unit);border:2.5px solid var(--line)}
+.qtop .pic svg{width:48px;height:48px;animation:bob 3s ease-in-out infinite}
+.qtop .pic.cheer svg{animation:cheer .6s cubic-bezier(.2,1.6,.4,1) 2}
+.qtop .pic.oops svg{animation:oops .5s ease-in-out 2}
+@keyframes cheer{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-12px) rotate(-8deg) scale(1.08)}60%{transform:translateY(-4px) rotate(8deg)}}
+@keyframes oops{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px) rotate(-5deg)}75%{transform:translateX(6px) rotate(5deg)}}
+.qtitle{min-width:0}
+.qtitle span{display:block;font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.qtitle strong{display:block;font-family:var(--display);font-weight:700;font-size:18px;line-height:1.2}
+.kbat{display:inline-block;margin-left:7px;padding:1px 9px;border-radius:999px;background:var(--pop);color:#2A1220;border:2px solid var(--line);font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.07em;vertical-align:2px}
+.qtext{font-size:20px;line-height:1.5;margin:6px 0 16px;text-wrap:pretty}
+.blank{display:inline-block;min-width:4.5em;padding:0 .35em;border-radius:9px;background:var(--blank);border-bottom:3px solid var(--line);text-align:center;vertical-align:baseline}
+em{font-style:normal;background:var(--blank);border-radius:8px;padding:0 .28em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:var(--r-md);background:var(--surface-2);border:2.5px solid var(--line);box-shadow:0 4px 0 var(--line);font-weight:800;font-size:17px;transition:transform .12s,box-shadow .12s,background .2s}
+.opt:hover:not(:disabled){background:var(--blank)}
+.opt:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 var(--line)}
+.opt .k{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--surface);border:2.5px solid var(--line);font-family:var(--display);font-weight:700;font-size:15px}
+.opt .mark{flex:none;margin-left:auto;width:23px;height:23px;opacity:0;transform:scale(.4);transition:opacity .2s,transform .3s cubic-bezier(.2,1.7,.4,1)}
+.opt.right{background:var(--good-bg);border-color:var(--good);box-shadow:0 4px 0 var(--good)}
+.opt.right .k{background:var(--good);border-color:var(--good);color:#fff}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad);box-shadow:0 4px 0 var(--bad);animation:shake .4s}
+.opt.wrong .k{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt.right .mark,.opt.wrong .mark{opacity:1;transform:none}
+.opt.faded{opacity:.5}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+
+.hint{display:flex;gap:10px;align-items:flex-start;margin-top:14px;padding:12px 14px;border-radius:var(--r-md);background:var(--hint-bg);color:var(--hint-ink);border:2.5px dashed var(--line);font-size:15px}
+.hint svg{width:19px;height:19px;flex:none;margin-top:2px}
+.why{margin-top:14px;padding:13px 15px;border-radius:var(--r-md);background:var(--surface-2);border:2.5px solid var(--line);font-size:15.5px;animation:pop-in .35s cubic-bezier(.2,1.5,.4,1) both}
+.why b{display:block;font-family:var(--display);font-weight:700;font-size:15px;margin-bottom:2px}
+.why.ok b{color:var(--good)}
+.why.no b{color:var(--bad)}
+.why .pg{display:block;margin-top:6px;font-size:13.5px;color:var(--muted)}
+
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btn{padding:12px 20px;border-radius:999px;background:var(--surface);border:2.5px solid var(--line);box-shadow:0 4px 0 var(--line);font-family:var(--display);font-weight:700;font-size:16px;transition:transform .12s,box-shadow .12s}
+.btn:active:not(:disabled){transform:translateY(4px);box-shadow:0 0 0 var(--line)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.grow{flex:1;min-width:150px}
+.btn:disabled{opacity:.45;box-shadow:0 4px 0 var(--line)}
+
+/* ---------- keputusan ---------- */
+.res{max-width:720px;margin:0 auto;text-align:center}
+.res .pic{display:grid;place-items:center;width:132px;height:132px;margin:8px auto 4px;border-radius:40px;background:var(--unit);border:3px solid var(--line);box-shadow:0 6px 0 var(--line)}
+.res .pic svg{width:104px;height:104px;animation:cheer 1.1s cubic-bezier(.2,1.6,.4,1) infinite}
+.res h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,7vw,40px);margin:14px 0 2px}
+.res .sub{color:var(--muted);margin:0}
+.score{font-family:var(--display);font-weight:800;font-size:clamp(46px,13vw,72px);line-height:1.05;margin:10px 0 0}
+.score small{font-size:.42em;color:var(--muted);font-weight:700}
+.res .stars{justify-content:center;margin:8px 0 0}
+.res .stars svg{width:38px;height:38px}
+.res .stars svg.lit{animation:star-pop .5s cubic-bezier(.2,1.8,.4,1) both}
+.res .stars svg.lit:nth-child(2){animation-delay:.14s}
+.res .stars svg.lit:nth-child(3){animation-delay:.28s}
+@keyframes star-pop{0%{opacity:0;transform:scale(.2) rotate(-35deg)}100%{opacity:1;transform:none}}
+.review{margin:22px 0 0;text-align:left}
+.review h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0 0 10px}
+.review ol{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.review li{padding:11px 14px;border-radius:var(--r-md);background:var(--surface);border:2.5px solid var(--line)}
+.review li.miss{border-color:var(--bad);background:var(--bad-bg)}
+.review .qq{display:block;font-size:15px}
+.review .blank{min-width:3.2em;border-bottom-width:2px}
+.review .aa{display:block;margin-top:3px;font-size:14.5px;color:var(--muted)}
+.review .aa b{color:var(--good)}
+.review li.miss .aa b{color:var(--bad)}
+
+/* konfeti */
+.confetti{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.confetti i{position:absolute;top:-8vh;width:11px;height:15px;border-radius:3px;animation:fall linear forwards}
+@keyframes fall{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(112vh) rotate(760deg)}}
+
+/* ---------- slip keputusan ---------- */
+.slip{margin:24px 0 6px;padding:18px;border-radius:var(--r-lg);text-align:left;background:var(--surface);border:3px dashed var(--unit)}
+.slip-head h3{font-family:var(--display);font-weight:700;font-size:21px;margin:0}
+.slip-head p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.slip-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:10px;align-items:end;margin-top:14px}
+.slip-form label{display:flex;flex-direction:column;gap:5px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--muted)}
+.slip-form input{font:inherit;font-family:var(--body);font-weight:800;font-size:16px;color:var(--ink);background:var(--surface-2);border:2.5px solid var(--line);border-radius:14px;padding:10px 12px;min-width:0;width:100%}
+.slip-form input:focus-visible{outline:3px solid var(--pop);outline-offset:1px}
+.slip-err{grid-column:1/-1;margin:0;min-height:1.2em;color:var(--bad);font-weight:800;font-size:14px}
+@media (max-width:600px){.slip-form{grid-template-columns:minmax(0,1fr)}}
+.ticket{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;margin:14px 0 0;padding:14px;border-radius:var(--r-md);background:var(--surface-2);border:2.5px solid var(--line)}
+.ticket dt{font-family:var(--display);font-weight:600;font-size:14px;color:var(--muted)}
+.ticket dd{margin:0;font-weight:800;min-width:0;overflow-wrap:anywhere}
+.ticket dd.code{font-family:ui-monospace,Menlo,monospace;letter-spacing:.09em;color:var(--accent)}
+.slip-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.slip-note{margin:12px 0 0;font-size:14px;color:var(--muted)}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:16px;background:color-mix(in srgb,var(--shade) 55%,transparent);backdrop-filter:blur(3px)}
+.modal-box{width:min(620px,100%);max-height:88vh;overflow:auto;padding:20px;border-radius:var(--r-lg);background:var(--surface);border:3px solid var(--line);box-shadow:0 8px 0 var(--line);animation:pop-in .3s cubic-bezier(.2,1.4,.4,1) both}
+.modal-box h3{font-family:var(--display);font-weight:700;font-size:22px;margin:0 0 4px}
+.modal-box p{font-size:15px}
+.myslips{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:10px}
+.myslips li{border:2.5px solid var(--line);border-radius:16px;padding:11px 13px;background:var(--surface-2)}
+.myslips .ms-empty{color:var(--muted);border-style:dashed;font-weight:700}
+.myslips .ms-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.myslips .ms-top b{font-family:var(--display);font-weight:700}
+.myslips .ms-meta{font-size:14px;color:var(--muted)}
+.myslips .ms-act{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.btn.sm{padding:7px 14px;font-size:14px;box-shadow:0 3px 0 var(--line)}
+textarea{font:inherit;font-family:ui-monospace,Menlo,monospace;font-size:13.5px;font-weight:600;width:100%;min-height:150px;padding:12px;border-radius:16px;background:var(--surface-2);color:var(--ink);border:2.5px solid var(--line);resize:vertical}
+.chk-out{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:9px}
+.chk-out li{padding:11px 13px;border-radius:16px;border:2.5px solid var(--line);background:var(--surface-2)}
+.chk-out li.ok{border-color:var(--good);background:var(--good-bg)}
+.chk-out li.no{border-color:var(--bad);background:var(--bad-bg)}
+.chk-out .tag{font-family:var(--display);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.chk-out li.ok .tag{color:var(--good)}
+.chk-out li.no .tag{color:var(--bad)}
+.chk-foot{margin-top:14px;font-size:13.5px;color:var(--muted)}
+
+/* ---------- minta kuiz baharu ---------- */
+.req-ask{margin:16px 0 0;font-size:15px;color:var(--muted)}
+.req-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:14px}
+.req-grid label{display:flex;flex-direction:column;gap:5px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--muted)}
+.req-grid .wide{grid-column:1/-1}
+.req-grid .lab{display:block;text-wrap:balance}
+.req-grid select,.req-grid input,.req-grid textarea{font:inherit;font-family:var(--body);font-weight:800;font-size:16px;color:var(--ink);background:var(--surface-2);border:2.5px solid var(--line);border-radius:14px;padding:10px 12px;min-width:0;width:100%}
+.req-grid textarea{font-weight:700;font-size:15px;min-height:74px;border-radius:14px}
+.req-grid select:focus-visible,.req-grid input:focus-visible,.req-grid textarea:focus-visible{outline:3px solid var(--pop);outline-offset:1px}
+.req-grid .row{margin-top:2px}
+.req-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.req-err{margin:0;min-height:1.2em;color:var(--bad);font-weight:800;font-size:14px}
+.req-foot{margin-top:14px;font-size:13.5px;color:var(--muted)}
+.req-queued{margin:12px 0 0;padding:11px 13px;border-radius:16px;border:2.5px solid var(--star);background:var(--hint-bg);color:var(--hint-ink);font-weight:700;font-size:14px}
+@media (max-width:600px){.req-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:22px;z-index:30;transform:translate(-50%,24px);opacity:0;pointer-events:none;padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--ground);border:2.5px solid var(--line);font-family:var(--display);font-weight:700;font-size:15px;transition:opacity .25s,transform .25s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+#selftest-result{position:relative;z-index:1;max-width:1080px;margin:0 auto 20px;padding:12px 16px;border-radius:14px;font:700 13px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;background:var(--surface);border:2.5px solid var(--line)}
+/* ---------- bahasa Arab ---------- */
+.ar{font-family:var(--arabic);font-weight:700;direction:rtl;unicode-bidi:isolate;font-size:1.28em;line-height:1.9}
+.hero-ar{display:block;margin:6px auto 0;font-size:clamp(32px,8vw,50px);line-height:1.7;color:var(--accent);animation:pop-in .6s cubic-bezier(.2,1.5,.4,1) .3s both}
+.show{display:flex;flex-direction:column;align-items:center;gap:6px;margin:2px 0 16px}
+.show .em{font-size:56px;line-height:1.15;animation:bob 2.6s ease-in-out infinite}
+.show .big{display:block;max-width:100%;padding:0 22px 4px;border-radius:24px;background:var(--blank);border:3px solid var(--line);box-shadow:0 5px 0 var(--line);font-size:clamp(38px,11vw,58px);line-height:1.8;text-align:center;overflow-wrap:anywhere;animation:pop-in .4s cubic-bezier(.2,1.5,.4,1) both}
+.show .big .blank{min-width:1.7em}
+.opt .t{flex:1;min-width:0}
+.opt.arc .t{text-align:center}
+.opt .t .ar{font-size:1.55em;line-height:1.7}
+.em-s{display:inline-block;margin-right:6px;font-size:1.25em;line-height:1}
+.uar{display:block;margin-top:-2px;font-size:1.15em;line-height:1.7;color:var(--accent)}
+.unit p{-webkit-line-clamp:3;line-clamp:3}
+.qtitle strong .ar{display:inline;font-size:1.15em;line-height:1.4;letter-spacing:0;text-transform:none;color:inherit;font-weight:700}
+.theme-h .ar{font-size:1.15em;line-height:1.5}
+.qtitle strong .kbat{display:inline-block;margin-left:7px;padding:1px 9px;font-size:11.5px;letter-spacing:.07em;color:#2A1220;text-transform:none;vertical-align:2px}
+.show .big.long{font-size:clamp(28px,7.4vw,46px);line-height:1.9}
+.review .qar{display:block;margin:2px 0 4px;text-align:center}
+.review .qar .ar{font-size:1.45em;line-height:1.7}
+.review .aa .ar{font-size:1.25em}
+.why .ar{font-size:1.2em}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<div class="wrap">
+
+<!-- ================= LAMAN UTAMA ================= -->
+<section id="home" aria-label="Pilih unit">
+  <div class="bar">
+    <div class="brand"><b lang="ar">ع</b> Bahasa Arab · Tahun 2 KSSR</div>
+    <div class="bar-r">
+      <button class="icon-btn" id="btn-sound" type="button" aria-label="Bunyi dihidupkan" aria-pressed="true"></button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1><span class="w">Kuiz</span> <span class="w">Bahasa</span> <span class="w">Arab</span> <span class="w">Tahun</span> <span class="w">2</span></h1>
+    <span class="ar hero-ar" lang="ar" dir="rtl">اللُّغَةُ العَرَبِيَّةُ</span>
+    <span class="edition">KSSR · Buku Teks DBP 2017</span>
+    <p>Uji kefahaman kamu unit demi unit. Pilih satu unit, jawab semua soalan, dan kumpul bintang!</p>
+    <div class="parade" id="parade" aria-hidden="true"></div>
+  </div>
+
+  <div class="stats" id="stats">
+    <span class="chip">Soalan dikuasai <span class="frac"><strong id="st-learnt">0</strong>/<span id="st-total">80</span></span> <span class="meter"><span id="st-meter"></span></span><button class="reset" id="btn-reset" type="button" aria-label="Mula semula dari sifar" title="Mula semula dari sifar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4v4.5H8"/></svg></button></span>
+    <span class="chip">Unit 3 bintang <span class="frac"><strong id="st-cleared">0</strong>/<span id="st-units">4</span></span></span>
+    <button class="chip chip-btn" id="btn-slips" type="button" data-open-slips><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4a3 3 0 0 0 0 6v4H4v-4a3 3 0 0 0 0-6z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg> Slip keputusan saya <strong id="st-slips">0</strong></button>
+  </div>
+
+  <div class="section-h">
+    <h2>Pilih unit</h2>
+    <span id="units-note">Unit 1–4 · 20 soalan setiap unit, 4 daripadanya KBAT</span>
+  </div>
+  <div id="units"></div>
+
+  <button class="mix" id="btn-mix" type="button">
+    <span class="trio" id="mix-trio" aria-hidden="true"></span>
+    <span>
+      <h3>Kuiz Rampaian</h3>
+      <p>20 soalan kejutan daripada semua empat unit. Sudah bersedia?</p>
+    </span>
+    <span class="go">Jom main</span>
+  </button>
+
+  <div class="foot">
+    <div class="keys"><span><kbd>A</kbd>–<kbd>D</kbd> jawab</span> <span><kbd>H</kbd> pembayang</span> <span><kbd>Enter</kbd> seterusnya</span> <span><kbd>Esc</kbd> kembali</span></div>
+    <p class="teacher"><button class="linkbtn" type="button" id="btn-checker">Cikgu: semak slip keputusan</button></p>
+    <p class="teacher" id="req-entry" hidden><button class="linkbtn" type="button" data-open-request>Minta kuiz baharu: unit, tahun atau subjek lain</button></p>
+    <p class="privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9.5" rx="2.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg><span>Jawapan dan bintang anda disimpan dalam <b>pelayar ini sahaja</b>, dan slip keputusan hanya sampai ke tempat yang anda pilih sendiri.<span id="privacy-send"></span> Jika anda bertukar peranti atau memadam data pelayar, anda bermula semula dari sifar.</span></p>
+    <p class="source">Semua soalan diambil daripada buku teks <i>Bahasa Arab Tahun 2</i> (Kurikulum Standard Sekolah Rendah, Dewan Bahasa dan Pustaka, 2017). Nombor halaman dicetak pada setiap kad unit supaya mudah dirujuk.</p>
+    <div class="credit">made with <span class="heart" role="img" aria-label="love">❤️</span> by Izanin Sofya</div>
+  </div>
+</section>
+
+<!-- ================= KUIZ ================= -->
+<section id="quiz" class="quiz" hidden tabindex="-1" aria-label="Kuiz">
+  <div class="qbar">
+    <button class="back" id="btn-back" type="button" aria-label="Kembali ke senarai unit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="track"><span id="q-track"></span></div>
+    <div class="count" id="q-count">1/20</div>
+  </div>
+
+  <div class="card">
+    <div class="qtop">
+      <div class="pic" id="q-pic"></div>
+      <div class="qtitle"><span id="q-unit">Unit</span><strong id="q-topic">Tajuk</strong></div>
+    </div>
+    <p class="qtext" id="q-text"></p>
+    <div class="show" id="q-show" hidden></div>
+    <div class="opts" id="q-opts" role="group" aria-label="Jawapan"></div>
+    <div class="hint" id="q-hint" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5.9 1.2.9 1.9V16h5.2v-.2c0-.7.3-1.4.9-1.9A6 6 0 0 0 12 3z"/></svg><span id="q-hint-text"></span></div>
+    <div class="why" id="q-why" hidden></div>
+    <div class="row">
+      <button class="btn" id="btn-hint" type="button">Beri saya pembayang</button>
+      <button class="btn primary grow" id="btn-next" type="button" disabled>Seterusnya</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KEPUTUSAN ================= -->
+<section id="results" class="res" hidden tabindex="-1" aria-label="Keputusan anda">
+  <div class="pic" id="r-pic"></div>
+  <h2 id="r-title">Syabas!</h2>
+  <p class="sub" id="r-sub"></p>
+  <p class="score" id="r-score"></p>
+  <div class="stars" id="r-stars"></div>
+  <section class="slip" id="r-slip" hidden aria-label="Slip keputusan"></section>
+  <div class="row">
+    <button class="btn primary grow" id="btn-again" type="button">Main lagi</button>
+    <button class="btn grow" id="btn-home" type="button">Kembali ke senarai unit</button>
+  </div>
+  <p class="req-ask" id="req-ask" hidden>Nak kuiz unit, tahun atau subjek yang lain? <button class="linkbtn" type="button" data-open-request>Beritahu Cikgu Sofya</button></p>
+  <div class="review" id="r-review"></div>
+</section>
+
+</div>
+
+<!-- penyemak cikgu -->
+<div class="modal" id="chk-modal" hidden role="dialog" aria-modal="true" aria-labelledby="chk-title">
+  <div class="modal-box" tabindex="-1">
+    <h3 id="chk-title">Semak slip keputusan</h3>
+    <p class="muted">Tampalkan slip yang dihantar oleh murid — satu atau banyak, terus daripada WhatsApp atau Google Classroom. Setiap kod semakan dikira semula, jadi slip yang diubah dengan tangan akan terpapar sebagai <b>diubah</b>. Semuanya kekal pada peranti ini.</p>
+    <label class="sr-only" for="chk-input">Slip keputusan yang ditampal</label>
+    <textarea id="chk-input" spellcheck="false" placeholder="Bahasa Arab Tahun 2 — slip keputusan kuiz&#10;Nama: …&#10;Kelas: …&#10;Unit: …&#10;Markah: …&#10;Selesai: …&#10;Kod semakan: …"></textarea>
+    <div class="row">
+      <button class="btn primary" id="btn-chk-run" type="button">Semak slip</button>
+      <button class="btn" id="btn-chk-clear" type="button">Kosongkan</button>
+      <button class="btn" id="btn-chk-close" type="button">Tutup</button>
+    </div>
+    <ul class="chk-out" id="chk-out"></ul>
+    <p class="chk-foot">Kod semakan menangkap slip yang disunting dengan tangan. Ia tidak dapat membuktikan siapa yang memegang telefon, dan sesiapa yang membaca kod halaman ini boleh mengira satu, jadi anggaplah ia semakan mesra dan bukan bukti.</p>
+  </div>
+</div>
+
+<!-- slip keputusan saya -->
+<div class="modal" id="slips-modal" hidden role="dialog" aria-modal="true" aria-labelledby="slips-title">
+  <div class="modal-box" tabindex="-1">
+    <h3 id="slips-title">Slip keputusan saya</h3>
+    <p class="muted">Setiap slip yang anda buat disimpan di sini, pada peranti ini sahaja.</p>
+    <ol class="myslips" id="myslips"></ol>
+    <div class="row"><button class="btn" id="btn-slips-close" type="button">Tutup</button></div>
+  </div>
+</div>
+
+<!-- minta kuiz baharu -->
+<div class="modal" id="req-modal" hidden role="dialog" aria-modal="true" aria-labelledby="req-title">
+  <div class="modal-box" tabindex="-1">
+    <h3 id="req-title">Minta kuiz baharu</h3>
+    <p class="muted">Kuiz mana yang patut dibuat selepas ini? Pilih subjek dan tahap, dan tulis unit atau topiknya kalau anda sudah tahu. Kami <b>tidak perlukan</b> nama, sekolah atau kelas anda.</p>
+    <form class="req-grid" id="req-form" novalidate>
+      <label for="req-subject"><span class="lab">Subjek</span><select id="req-subject" name="subject"><option value="">Pilih subjek…</option><option>Bahasa Arab</option><option>Sejarah</option><option>Geografi</option><option>Bahasa Melayu</option><option>Bahasa Inggeris</option><option>Matematik</option><option>Sains</option><option>Pendidikan Islam</option><option>Pendidikan Moral</option><option>Reka Bentuk dan Teknologi</option><option>Lain-lain</option></select></label>
+      <label for="req-level"><span class="lab">Tahap</span><select id="req-level" name="level"><option value="">Pilih tahap…</option><option>Tahun 1</option><option>Tahun 2</option><option>Tahun 3</option><option>Tahun 4</option><option>Tahun 5</option><option>Tahun 6</option><option>Tingkatan 1</option><option>Tingkatan 2</option><option>Tingkatan 3</option><option>Tingkatan 4</option><option>Tingkatan 5</option><option>Tingkatan 6 / MUET</option><option>Lain-lain</option></select></label>
+      <label class="wide" for="req-topic"><span class="lab">Unit atau topik <span class="muted">(pilihan)</span></span><input id="req-topic" name="topic" maxlength="80" autocomplete="off" placeholder="cth. Tahun 3 — Unit 1"></label>
+      <label for="req-role"><span class="lab">Saya seorang <span class="muted">(pilihan)</span></span><select id="req-role" name="role"><option value="">Pilih…</option><option>Guru</option><option>Murid</option><option>Ibu bapa atau penjaga</option><option>Lain-lain</option></select></label>
+      <label for="req-email"><span class="lab">E-mel <span class="muted">(pilihan)</span></span><input id="req-email" name="email" type="email" maxlength="80" autocomplete="email" placeholder="kalau nak tahu bila siap"></label>
+      <label class="wide" for="req-note"><span class="lab">Catatan <span class="muted">(pilihan)</span></span><textarea id="req-note" name="note" maxlength="300" placeholder="Apa-apa lagi yang patut saya tahu?"></textarea></label>
+      <div class="req-hp" aria-hidden="true"><label for="req-web">Laman web<input id="req-web" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="row wide">
+        <button class="btn primary" type="submit" id="btn-req-send">Hantar permintaan</button>
+        <button class="btn" type="button" id="btn-req-close">Tutup</button>
+      </div>
+      <p class="req-err wide" id="req-err" aria-live="polite"></p>
+    </form>
+    <p class="req-foot">Permintaan ini sampai kepada Cikgu Sofya sahaja, dan yang dihantar hanyalah apa yang anda taip di atas &mdash; tiada nama, tiada markah, tiada slip. Tinggalkan e-mel hanya jika anda mahu dimaklumkan apabila kuiz itu siap. Kalau anda sedang luar talian, permintaan disimpan pada peranti ini dan dihantar sendiri apabila halaman ini dibuka semula dalam talian.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   Bahasa Arab Tahun 2 Sekolah Kebangsaan (KSSR)
+   Kuiz topikal satu fail.
+   Semua soalan diambil daripada buku teks terbitan Dewan Bahasa
+   dan Pustaka (2017). Tiada langkah binaan, tiada panggilan
+   rangkaian, tiada data keluar daripada pelayar.
+   ============================================================ */
+
+/* ---------------- watak comel ---------------- */
+const INK = "#2B2750";
+const S3 = `stroke="${INK}" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"`;
+
+/* mata, pipi merah dan senyuman, dikongsi oleh kebanyakan rakan */
+function face(cx, cy, o) {
+  o = o || {};
+  const ex = o.ex == null ? 11 : o.ex, er = o.er == null ? 4.8 : o.er;
+  const sy = o.sy == null ? cy + 10 : o.sy, sw = o.sw == null ? 6 : o.sw;
+  const smile = o.smile === false ? "" :
+    `<path d="M${cx - sw} ${sy} q${sw} ${sw} ${sw * 2} 0" stroke="${INK}" stroke-width="3" stroke-linecap="round" fill="none"/>`;
+  const blush = o.blush === false ? "" :
+    `<ellipse cx="${cx - ex - 8}" cy="${cy + 8}" rx="5.4" ry="3.5" fill="#FF93B5" opacity=".72"/>
+     <ellipse cx="${cx + ex + 8}" cy="${cy + 8}" rx="5.4" ry="3.5" fill="#FF93B5" opacity=".72"/>`;
+  return `${blush}
+    <ellipse class="eye" cx="${cx - ex}" cy="${cy}" rx="${er}" ry="${er}" fill="${INK}"/>
+    <ellipse class="eye b" cx="${cx + ex}" cy="${cy}" rx="${er}" ry="${er}" fill="${INK}"/>
+    <circle cx="${cx - ex + 1.7}" cy="${cy - 1.7}" r="1.5" fill="#fff"/>
+    <circle cx="${cx + ex + 1.7}" cy="${cy - 1.7}" r="1.5" fill="#fff"/>
+    ${smile}`;
+}
+const wrapSvg = (inner) => `<svg viewBox="0 0 100 100" fill="none" aria-hidden="true">${inner}</svg>`;
+
+const ART = {
+  /* burung hantu */
+  burunghantu: (c) => wrapSvg(`
+    <path d="M30 28 L25 11 L44 21 Z" fill="${c}" ${S3}/>
+    <path d="M70 28 L75 11 L56 21 Z" fill="${c}" ${S3}/>
+    <path d="M50 19 c18 0 28 14 28 31 c0 20-12 33-28 33 s-28-13-28-33 c0-17 10-31 28-31z" fill="${c}" ${S3}/>
+    <path d="M50 58 c9 0 16 8 16 18 a28 28 0 0 1-32 0 c0-10 7-18 16-18z" fill="#FFF6E2" opacity=".85"/>
+    <circle cx="38" cy="45" r="12.5" fill="#FFF6E2" ${S3}/>
+    <circle cx="62" cy="45" r="12.5" fill="#FFF6E2" ${S3}/>
+    <ellipse class="eye" cx="38" cy="45" rx="5.6" ry="5.6" fill="${INK}"/>
+    <ellipse class="eye b" cx="62" cy="45" rx="5.6" ry="5.6" fill="${INK}"/>
+    <circle cx="40" cy="43" r="1.8" fill="#fff"/><circle cx="64" cy="43" r="1.8" fill="#fff"/>
+    <path d="M50 52 l-5 7 h10 z" fill="#FFB347" ${S3} stroke-width="2.4"/>`),
+
+  /* beruang madu */
+  beruang: (c) => wrapSvg(`
+    <circle cx="23" cy="25" r="13" fill="${c}" ${S3}/>
+    <circle cx="77" cy="25" r="13" fill="${c}" ${S3}/>
+    <circle cx="23" cy="25" r="6.5" fill="#FFC6D4" opacity=".7"/>
+    <circle cx="77" cy="25" r="6.5" fill="#FFC6D4" opacity=".7"/>
+    <circle cx="50" cy="55" r="31" fill="${c}" ${S3}/>
+    <ellipse cx="50" cy="67" rx="18" ry="13" fill="#FFEFD4" ${S3} stroke-width="2.6"/>
+    ${face(50, 47, { smile: false, blush: false })}
+    <ellipse cx="22" cy="58" rx="5.4" ry="3.5" fill="#FF93B5" opacity=".7"/>
+    <ellipse cx="78" cy="58" rx="5.4" ry="3.5" fill="#FF93B5" opacity=".7"/>
+    <ellipse cx="50" cy="62" rx="5.4" ry="3.8" fill="${INK}"/>
+    <path d="M43 70 q7 7 14 0" stroke="${INK}" stroke-width="3" stroke-linecap="round" fill="none"/>`),
+
+  /* gajah */
+  gajah: (c) => wrapSvg(`
+    <ellipse cx="20" cy="46" rx="16" ry="20" fill="${c}" ${S3}/>
+    <ellipse cx="80" cy="46" rx="16" ry="20" fill="${c}" ${S3}/>
+    <ellipse cx="20" cy="47" rx="8" ry="11" fill="#FFC6D4" opacity=".65"/>
+    <ellipse cx="80" cy="47" rx="8" ry="11" fill="#FFC6D4" opacity=".65"/>
+    <circle cx="50" cy="50" r="28" fill="${c}" ${S3}/>
+    ${face(50, 43, { ex: 10, smile: false, blush: false })}
+    <ellipse cx="29" cy="53" rx="5.4" ry="3.5" fill="#FF93B5" opacity=".7"/>
+    <ellipse cx="71" cy="53" rx="5.4" ry="3.5" fill="#FF93B5" opacity=".7"/>
+    <path d="M50 54 v15 q0 8 7 9" fill="none" stroke="${INK}" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M50 54 v15 q0 8 7 9" fill="none" stroke="${c}" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/>`),
+
+  /* pensel — kawan di dalam buku teks */
+  pensel: (c) => wrapSvg(`
+    <path d="M30 27 h40 v47 h-40 z" fill="${c}" ${S3}/>
+    <path d="M38 36 v34" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+    <rect x="30" y="8" width="40" height="17" rx="8" fill="#FF93B5" ${S3}/>
+    <rect x="30" y="24" width="40" height="8" fill="#D9DEE8" ${S3}/>
+    <path d="M30 74 L50 95 L70 74 Z" fill="#F6D7A8" ${S3}/>
+    <path d="M43 87 L50 95 L57 87 Z" fill="${INK}"/>
+    ${face(50, 50, { ex: 8, er: 4.4, sy: 60, sw: 5.5 })}`),
+
+  /* kucing */
+  kucing: (c) => wrapSvg(`
+    <path d="M26 38 L29 13 L47 27 Z" fill="${c}" ${S3}/>
+    <path d="M74 38 L71 13 L53 27 Z" fill="${c}" ${S3}/>
+    <path d="M32 33 L33.5 21 L42 28 Z" fill="#FF9BB8"/>
+    <path d="M68 33 L66.5 21 L58 28 Z" fill="#FF9BB8"/>
+    <circle cx="50" cy="57" r="29" fill="${c}" ${S3}/>
+    <path d="M12 54 L28 56 M12 63 L28 62 M88 54 L72 56 M88 63 L72 62" ${S3} stroke-width="2.6"/>
+    ${face(50, 53, { sy: 66 })}
+    <path d="M46.5 58 h7 l-3.5 4 z" fill="#FF8FA8"/>`),
+
+  /* unta */
+  unta: (c) => wrapSvg(`
+    <ellipse cx="33" cy="26" rx="13" ry="16" fill="${c}" ${S3}/>
+    <ellipse cx="67" cy="26" rx="13" ry="16" fill="${c}" ${S3}/>
+    <ellipse cx="22" cy="50" rx="7" ry="11" fill="${c}" ${S3} transform="rotate(-22 22 50)"/>
+    <ellipse cx="78" cy="50" rx="7" ry="11" fill="${c}" ${S3} transform="rotate(22 78 50)"/>
+    <ellipse cx="22" cy="51" rx="3" ry="6" fill="#FFC6D4" transform="rotate(-22 22 51)"/>
+    <ellipse cx="78" cy="51" rx="3" ry="6" fill="#FFC6D4" transform="rotate(22 78 51)"/>
+    <circle cx="50" cy="54" r="27" fill="${c}" ${S3}/>
+    <ellipse cx="50" cy="69" rx="17" ry="13" fill="#FFF1D6" ${S3} stroke-width="2.6"/>
+    ${face(50, 51, { sy: 75, sw: 5 })}
+    <ellipse cx="45.5" cy="65" rx="1.8" ry="2.4" fill="${INK}"/><ellipse cx="54.5" cy="65" rx="1.8" ry="2.4" fill="${INK}"/>`),
+
+  /* ikan */
+  ikan: (c) => wrapSvg(`
+    <path d="M72 52 l24-18 v36z" fill="#FFD166" ${S3}/>
+    <ellipse cx="44" cy="52" rx="32" ry="26" fill="${c}" ${S3}/>
+    <path d="M44 26 q10 8 8 18" fill="none" ${S3}/>
+    <path d="M58 42 q11 10 0 20" stroke="${INK}" stroke-width="2.6" stroke-linecap="round" fill="none" opacity=".5"/>
+    ${face(38, 48, { ex: 9, sy: 62, sw: 6 })}`),
+
+  /* penyu */
+  penyu: (c) => wrapSvg(`
+    <ellipse cx="50" cy="60" rx="33" ry="26" fill="${c}" ${S3}/>
+    <path d="M50 34 v52 M20 52 q30 8 60 0 M23 70 q27-6 54 0" stroke="${INK}" stroke-width="2.6" stroke-linecap="round" opacity=".55"/>
+    <circle cx="50" cy="26" r="16" fill="#9FE0C4" ${S3}/>
+    ${face(50, 24, { ex: 6.5, er: 3.8, sy: 32, sw: 5 })}
+    <ellipse cx="18" cy="80" rx="9" ry="6" fill="#9FE0C4" ${S3} transform="rotate(-20 18 80)"/>
+    <ellipse cx="82" cy="80" rx="9" ry="6" fill="#9FE0C4" ${S3} transform="rotate(20 82 80)"/>`)
+};
+
+/* watak perarakan di laman utama dan butang rampaian */
+const PARADE = [
+  ["burunghantu", "#C7A6F2"], ["kucing", "#F6B26B"], ["beruang", "#D9915B"], ["unta", "#E8B77A"],
+  ["gajah", "#A9B8E8"], ["ikan", "#7FC4F0"], ["pensel", "#FFD84A"], ["penyu", "#7CCB8F"]
+];
+const artOf = (p) => ART[p[0]](p[1]);
+const MIX_TRIO = [PARADE[1], PARADE[3], PARADE[7]];
+
+/* ------------------------------------------------------------
+   BANK SOALAN
+   Setiap unit sepadan dengan satu unit dalam buku teks.
+   o[0] sentiasa jawapan yang betul; kedudukannya dikocok semasa
+   soalan dipaparkan.  s = tajuk kecil, h = pembayang,
+   e = penerangan selepas menjawab, ar = baris Arab besar,
+   em = gambar emoji di atas soalan, pic = gambar emoji bersama
+   pembayang dan penerangan.  «teks» dilukis sebagai teks Arab.
+   ------------------------------------------------------------ */
+const UNITS = [
+{
+  "id": "u1", "no": "Unit 1", "title": "Mari Berkenalan", "ar": "هَيَّا نَتَعَارَفْ", "sub": "Huruf «ل» «ي», murid dan guru, perkenalan dan nombor 11–12", "theme": "Empat unit dalam buku teks", "pages": "hlm. 1–24", "colour": "#FFD166", "art": "burunghantu", "artColour": "#C7A6F2", "topics": ["Huruf «ل» dan «ي»", "Murid dan Guru", "Kata Ganti Nama", "Soal Jawab Perkenalan", "Nombor 11 dan 12"], "tp": {"Huruf «ل» dan «ي»": "hlm. 2–7", "Murid dan Guru": "hlm. 8–9", "Kata Ganti Nama": "hlm. 10", "Soal Jawab Perkenalan": "hlm. 12–18", "Nombor 11 dan 12": "hlm. 19–22"},
+  "q": [
+    {"s": "Huruf «ل» dan «ي»", "q": "Apakah huruf pertama bagi perkataan ini?", "ar": "لِسَانٌ", "pic": "👅", "o": ["ل", "س", "ن", "ي"], "h": "Perkataan Arab dibaca dari sebelah kanan.", "e": "«لِسَانٌ» ialah lidah. Perkataan Arab dibaca dari kanan ke kiri, jadi huruf pertamanya ialah «ل» (lam)."},
+    {"s": "Huruf «ل» dan «ي»", "q": "Perkataan manakah ada huruf «ي» (ya)?", "pic": "✋", "o": ["يَدٌ", "قَلَمٌ", "جَمَلٌ", "لُغَةٌ"], "h": "Cari huruf yang ada dua titik di bawahnya.", "e": "«يَدٌ» ialah tangan, dan ia bermula dengan «ي» (ya) yang ada dua titik di bawah."},
+    {"s": "Huruf «ل» dan «ي»", "q": "Pilih perkataan Arab bagi unta.", "em": "🐪", "o": ["جَمَلٌ", "قَلَمٌ", "لِسَانٌ", "لَحْمٌ"], "h": "Perkataan ini bermula dengan huruf «ج» (jim).", "e": "«جَمَلٌ» ialah unta. «قَلَمٌ» ialah pen, «لِسَانٌ» ialah lidah dan «لَحْمٌ» ialah daging."},
+    {"s": "Huruf «ل» dan «ي»", "q": "Apakah maksud perkataan ini?", "ar": "لِبَاسٌ", "pic": "👕", "o": ["pakaian", "daging", "bahasa", "unta"], "h": "Kita memakainya pada badan.", "e": "«لِبَاسٌ» bermaksud pakaian. «لَحْمٌ» ialah daging dan «لُغَةٌ» ialah bahasa."},
+    {"s": "Murid dan Guru", "q": "Apakah maksud perkataan ini?", "ar": "تِلْمِيذٌ", "pic": "🧑‍🎓", "o": ["murid lelaki", "murid perempuan", "guru lelaki", "guru perempuan"], "h": "Perkataan ini tiada «ة» (ta marbutah) di hujung.", "e": "«تِلْمِيذٌ» ialah murid lelaki. Murid perempuan ialah «تِلْمِيذَةٌ»."},
+    {"s": "Murid dan Guru", "q": "Apakah maksud perkataan ini?", "ar": "مُعَلِّمَةٌ", "pic": "👩‍🏫", "o": ["guru perempuan", "guru lelaki", "murid perempuan", "murid lelaki"], "h": "Huruf «ة» di hujung perkataan menunjukkan perempuan.", "e": "«مُعَلِّمَةٌ» ialah guru perempuan. Guru lelaki ialah «مُعَلِّمٌ»."},
+    {"s": "Murid dan Guru", "q": "Pilih perkataan Arab bagi murid perempuan.", "o": ["تِلْمِيذَةٌ", "تِلْمِيذٌ", "مُعَلِّمٌ", "مُعَلِّمَةٌ"], "h": "Perkataan murid, kemudian tambah «ة».", "e": "Murid perempuan ialah «تِلْمِيذَةٌ». «تِلْمِيذٌ» ialah murid lelaki; «مُعَلِّمٌ» dan «مُعَلِّمَةٌ» ialah guru."},
+    {"s": "Murid dan Guru", "q": "Perkataan manakah BUKAN merujuk kepada perempuan?", "k": 1, "o": ["تِلْمِيذٌ", "تِلْمِيذَةٌ", "مُعَلِّمَةٌ", "أَنْتِ"], "h": "Tiga perkataan merujuk kepada perempuan; satu lagi merujuk kepada lelaki.", "e": "«تِلْمِيذٌ» ialah murid lelaki. «تِلْمِيذَةٌ», «مُعَلِّمَةٌ» dan «أَنْتِ» (kamu, perempuan) merujuk kepada perempuan."},
+    {"s": "Kata Ganti Nama", "q": "Apakah maksud perkataan ini?", "ar": "أَنَا", "o": ["saya", "kamu (lelaki)", "kamu (perempuan)", "siapa"], "h": "Orang yang bercakap menyebut tentang dirinya.", "e": "«أَنَا» bermaksud saya. «أَنْتَ» ialah kamu (lelaki) dan «أَنْتِ» ialah kamu (perempuan)."},
+    {"s": "Kata Ganti Nama", "q": "Pilih perkataan Arab bagi kamu (lelaki).", "o": ["أَنْتَ", "أَنْتِ", "أَنَا", "مَنْ"], "h": "Hujung perkataan ini berbaris atas (fathah).", "e": "Kamu (lelaki) ialah «أَنْتَ». Kamu (perempuan) ialah «أَنْتِ» yang berbaris bawah."},
+    {"s": "Kata Ganti Nama", "q": "Anda bercakap dengan kakak anda. Perkataan manakah anda guna untuk menyebut kamu?", "k": 1, "o": ["أَنْتِ", "أَنْتَ", "أَنَا", "مَنْ"], "h": "Kakak ialah seorang perempuan.", "e": "Kakak ialah perempuan, jadi kita guna «أَنْتِ» (kamu, perempuan). «أَنْتَ» ialah untuk lelaki."},
+    {"s": "Kata Ganti Nama", "q": "Lengkapkan ayat ini (Saya murid lelaki).", "ar": "___ تِلْمِيذٌ.", "o": ["أَنَا", "أَنْتِ", "مَنْ", "مَا"], "h": "Murid itu bercakap tentang dirinya sendiri.", "e": "«أَنَا تِلْمِيذٌ» bermaksud saya murid lelaki."},
+    {"s": "Soal Jawab Perkenalan", "q": "Apakah maksud ayat ini?", "ar": "مَا اسْمُكَ؟", "o": ["Apa nama kamu (lelaki)?", "Apa khabar kamu?", "Berapa umur kamu?", "Di mana kamu tinggal?"], "h": "Perkataan «اِسْمٌ» ialah nama.", "e": "«مَا اسْمُكَ؟» bermaksud apa nama kamu (kepada lelaki). Jawapannya «اِسْمِي يُوسُفُ»."},
+    {"s": "Soal Jawab Perkenalan", "q": "Pilih jawapan yang sesuai.", "ar": "كَيْفَ حَالُكَ؟", "o": ["أَنَا بِخَيْرٍ، وَالْحَمْدُ لِلَّهِ.", "أَنَا تِلْمِيذٌ.", "عُمْرِي ثَمَانِي سَنَوَاتٍ.", "أَسْكُنُ فِي ملاك."], "h": "Soalan ini bertanya tentang khabar.", "e": "«كَيْفَ حَالُكَ؟» bermaksud apa khabar kamu. Jawapannya «أَنَا بِخَيْرٍ، وَالْحَمْدُ لِلَّهِ» (saya sihat, alhamdulillah)."},
+    {"s": "Soal Jawab Perkenalan", "q": "Pilih jawapan yang sesuai.", "ar": "كَمْ عُمْرُكِ؟", "o": ["عُمْرِي ثَمَانِي سَنَوَاتٍ.", "اِسْمِي يُوسُفُ.", "أَنَا تِلْمِيذَةٌ.", "أَسْكُنُ فِي ملاك."], "h": "«كَمْ» bermaksud berapa.", "e": "«كَمْ عُمْرُكِ؟» bermaksud berapa umur kamu. Jawapannya «عُمْرِي ثَمَانِي سَنَوَاتٍ» (umur saya lapan tahun)."},
+    {"s": "Soal Jawab Perkenalan", "q": "Pilih jawapan yang sesuai.", "ar": "أَيْنَ تَسْكُنُ؟", "o": ["أَسْكُنُ فِي كوالا لمفور.", "اِسْمِي يُوسُفُ.", "أَنَا بِخَيْرٍ.", "عُمْرِي ثَمَانِي سَنَوَاتٍ."], "h": "«أَيْنَ» bermaksud di mana.", "e": "«أَيْنَ تَسْكُنُ؟» bermaksud di mana kamu tinggal. Jawapannya «أَسْكُنُ فِي كوالا لمفور» (saya tinggal di Kuala Lumpur)."},
+    {"s": "Soal Jawab Perkenalan", "q": "Anda bertanya nama seorang murid perempuan. Soalan manakah yang betul?", "k": 1, "o": ["مَا اسْمُكِ؟", "مَا اسْمُكَ؟", "كَيْفَ حَالُكَ؟", "مَنْ أَنْتَ؟"], "h": "Untuk perempuan, hujung perkataan «اسْمُكِ» berbaris bawah.", "e": "Untuk perempuan kita sebut «مَا اسْمُكِ؟». «مَا اسْمُكَ؟» ialah untuk lelaki."},
+    {"s": "Nombor 11 dan 12", "q": "Nombor 11 dalam bahasa Arab ialah …", "o": ["أَحَدَ عَشَرَ", "اِثْنَا عَشَرَ", "عَشَرَةٌ", "ثَمَانِيَةٌ"], "h": "Ia datang selepas sepuluh dan sebelum dua belas.", "e": "Nombor 11 ialah «أَحَدَ عَشَرَ». «اِثْنَا عَشَرَ» ialah 12."},
+    {"s": "Nombor 11 dan 12", "q": "«اِثْنَا عَشَرَ» ialah nombor …", "o": ["12", "11", "10", "2"], "h": "Sepuluh tambah dua.", "e": "«اِثْنَا عَشَرَ» ialah 12 («١٢»)."},
+    {"s": "Nombor 11 dan 12", "q": "Hitung. Pilih jawapan dalam bahasa Arab.", "ar": "٧ + ٥ = ؟", "k": 1, "o": ["اِثْنَا عَشَرَ", "أَحَدَ عَشَرَ", "عَشَرَةٌ", "ثَمَانِيَةٌ"], "h": "Kira dengan jari: 7 tambah 5.", "e": "«٧ + ٥ = ١٢», iaitu «اِثْنَا عَشَرَ»."}
+  ]
+},
+{
+  "id": "u2", "no": "Unit 2", "title": "Saya Sayang Keluarga Saya", "ar": "أُحِبُّ أُسْرَتِي", "sub": "Huruf «و» «س», ahli keluarga, «هٰذَا» dan «هٰذِهِ», nombor 13–16", "theme": "Empat unit dalam buku teks", "pages": "hlm. 25–48", "colour": "#FF9FB8", "art": "beruang", "artColour": "#D9915B", "topics": ["Huruf «و» dan «س»", "Ahli Keluarga", "«هٰذَا» dan «هٰذِهِ»", "Nombor 13 hingga 16"], "tp": {"Huruf «و» dan «س»": "hlm. 26–31", "Ahli Keluarga": "hlm. 32–36", "«هٰذَا» dan «هٰذِهِ»": "hlm. 37–42", "Nombor 13 hingga 16": "hlm. 43–46"},
+  "q": [
+    {"s": "Huruf «و» dan «س»", "q": "Perkataan manakah bermula dengan huruf «و» (waw)?", "o": ["وِسَادَةٌ", "سِتَارٌ", "سَمَكٌ", "دَلْوٌ"], "h": "Satu perkataan ada «و» di hujung, bukan di awal.", "e": "«وِسَادَةٌ» ialah bantal dan ia bermula dengan «و». «دَلْوٌ» (baldi) ada «و» di hujung."},
+    {"s": "Huruf «و» dan «س»", "q": "Apakah huruf terakhir bagi perkataan ini?", "ar": "دَلْوٌ", "o": ["و", "د", "ل", "س"], "h": "Baca dari kanan; huruf terakhir berada paling kiri.", "e": "«دَلْوٌ» ialah baldi. Huruf terakhirnya ialah «و» (waw)."},
+    {"s": "Huruf «و» dan «س»", "q": "Apakah maksud perkataan ini?", "ar": "سَمَكٌ", "pic": "🐟", "o": ["ikan", "kura-kura", "langsir", "baldi"], "h": "Ia hidup dan berenang di dalam air.", "e": "«سَمَكٌ» bermaksud ikan. «سُلَحْفَاةٌ» ialah kura-kura, «سِتَارٌ» ialah langsir dan «دَلْوٌ» ialah baldi."},
+    {"s": "Huruf «و» dan «س»", "q": "Perkataan manakah bermula dengan huruf «س» (sin)?", "pic": "🐢", "o": ["سُلَحْفَاةٌ", "وَرَقَةٌ", "وُضُوءٌ", "لَوْحَةٌ"], "h": "Perkataan ini ialah haiwan yang berjalan dengan perlahan.", "e": "«سُلَحْفَاةٌ» ialah kura-kura dan bermula dengan «س»."},
+    {"s": "Ahli Keluarga", "q": "Apakah maksud perkataan ini?", "ar": "أَبٌ", "pic": "👨", "o": ["ayah", "ibu", "datuk", "abang"], "h": "Dia seorang lelaki yang menjaga keluarga.", "e": "«أَبٌ» bermaksud ayah. Ibu ialah «أُمٌّ»."},
+    {"s": "Ahli Keluarga", "q": "Apakah maksud perkataan ini?", "ar": "جَدَّةٌ", "pic": "👵", "o": ["nenek", "datuk", "ibu saudara", "kakak"], "h": "Dia ialah ibu kepada ibu atau ayah kita.", "e": "«جَدَّةٌ» bermaksud nenek. Datuk ialah «جَدٌّ»."},
+    {"s": "Ahli Keluarga", "q": "Pilih perkataan Arab bagi bapa saudara.", "o": ["عَمٌّ", "عَمَّةٌ", "جَدٌّ", "أَخٌ"], "h": "Bapa saudara ialah lelaki, jadi perkataannya tiada «ة».", "e": "Bapa saudara ialah «عَمٌّ». «عَمَّةٌ» ialah ibu saudara."},
+    {"s": "Ahli Keluarga", "q": "Pilih perkataan Arab bagi kakak atau adik perempuan.", "o": ["أُخْتٌ", "أَخٌ", "أُمٌّ", "بِنْتٌ"], "h": "Perkataan ini bunyinya «ukht».", "e": "Kakak atau adik perempuan ialah «أُخْتٌ». «أَخٌ» ialah abang atau adik lelaki."},
+    {"s": "Ahli Keluarga", "q": "Kumpulan manakah semuanya ahli keluarga perempuan?", "k": 1, "o": ["أُمٌّ، جَدَّةٌ، عَمَّةٌ", "أَبٌ، جَدٌّ، عَمٌّ", "أُمٌّ، أَخٌ، عَمَّةٌ", "جَدٌّ، أُخْتٌ، بِنْتٌ"], "h": "Ayah, datuk, bapa saudara dan abang ialah lelaki.", "e": "Ibu «أُمٌّ», nenek «جَدَّةٌ» dan ibu saudara «عَمَّةٌ» semuanya perempuan. Kumpulan lain ada lelaki seperti «أَبٌ» (ayah), «أَخٌ» (abang) atau «جَدٌّ» (datuk)."},
+    {"s": "«هٰذَا» dan «هٰذِهِ»", "q": "Lengkapkan ayat ini (Ini datuk).", "ar": "___ جَدٌّ.", "pic": "👴", "o": ["هٰذَا", "هٰذِهِ", "أَنَا", "مَنْ"], "h": "Datuk ialah lelaki.", "e": "«هٰذَا جَدٌّ» bermaksud ini datuk. «هٰذَا» digunakan untuk lelaki."},
+    {"s": "«هٰذَا» dan «هٰذِهِ»", "q": "Lengkapkan ayat ini (Ini nenek).", "ar": "___ جَدَّةٌ.", "o": ["هٰذِهِ", "هٰذَا", "أَنَا", "مَا"], "h": "Nenek ialah perempuan.", "e": "«هٰذِهِ جَدَّةٌ» bermaksud ini nenek. «هٰذِهِ» digunakan untuk perempuan."},
+    {"s": "«هٰذَا» dan «هٰذِهِ»", "q": "Ayat manakah yang SALAH?", "k": 1, "o": ["هٰذِهِ أَخٌ.", "هٰذَا أَخٌ.", "هٰذِهِ أُخْتٌ.", "هٰذَا عَمٌّ."], "h": "Semak sama ada setiap ahli keluarga lelaki atau perempuan.", "e": "«أَخٌ» ialah lelaki, jadi ayat yang betul ialah «هٰذَا أَخٌ». «هٰذِهِ أَخٌ» adalah salah."},
+    {"s": "«هٰذَا» dan «هٰذِهِ»", "q": "Pilih jawapan yang betul untuk soalan ini (gambar ibu).", "ar": "مَنْ هٰذِهِ؟", "pic": "👩", "o": ["هٰذِهِ أُمٌّ.", "هٰذَا أُمٌّ.", "هٰذِهِ أَبٌ.", "أَنَا بِنْتٌ."], "h": "Ibu ialah perempuan.", "e": "«مَنْ هٰذِهِ؟» bermaksud siapa ini (perempuan). Jawapannya «هٰذِهِ أُمٌّ» (ini ibu)."},
+    {"s": "«هٰذَا» dan «هٰذِهِ»", "q": "Apakah maksud ayat ini?", "ar": "أَنَا اِبْنٌ.", "o": ["Saya anak lelaki.", "Saya anak perempuan.", "Ini abang.", "Ini kakak."], "h": "Anak perempuan ialah «بِنْتٌ».", "e": "«أَنَا اِبْنٌ» bermaksud saya anak lelaki. «أَنَا بِنْتٌ» bermaksud saya anak perempuan."},
+    {"s": "Nombor 13 hingga 16", "q": "Nombor 13 dalam bahasa Arab ialah …", "o": ["ثَلَاثَةَ عَشَرَ", "أَرْبَعَةَ عَشَرَ", "خَمْسَةَ عَشَرَ", "سِتَّةَ عَشَرَ"], "h": "«ثَلَاثَةٌ» ialah tiga. Tambah sepuluh.", "e": "Nombor 13 ialah «ثَلَاثَةَ عَشَرَ», iaitu 3 + 10."},
+    {"s": "Nombor 13 hingga 16", "q": "«سِتَّةَ عَشَرَ» ialah nombor …", "o": ["16", "15", "14", "13"], "h": "«سِتَّةٌ» ialah enam. Tambah sepuluh.", "e": "«سِتَّةَ عَشَرَ» ialah 16 («١٦»), iaitu 6 + 10."},
+    {"s": "Nombor 13 hingga 16", "q": "Ini nombor berapa?", "ar": "أَرْبَعَةَ عَشَرَ", "o": ["14", "13", "15", "16"], "h": "«أَرْبَعَةٌ» ialah empat. Tambah sepuluh.", "e": "«أَرْبَعَةَ عَشَرَ» ialah 14 («١٤»)."},
+    {"s": "Nombor 13 hingga 16", "q": "Nombor 15 dalam bahasa Arab ialah …", "o": ["خَمْسَةَ عَشَرَ", "ثَلَاثَةَ عَشَرَ", "أَرْبَعَةَ عَشَرَ", "سِتَّةَ عَشَرَ"], "h": "«خَمْسَةٌ» ialah lima. Tambah sepuluh.", "e": "Nombor 15 ialah «خَمْسَةَ عَشَرَ», iaitu 5 + 10."},
+    {"s": "Nombor 13 hingga 16", "q": "Hitung. Pilih jawapan dalam bahasa Arab.", "ar": "٩ + ٤ = ؟", "k": 1, "o": ["ثَلَاثَةَ عَشَرَ", "اِثْنَا عَشَرَ", "أَرْبَعَةَ عَشَرَ", "خَمْسَةَ عَشَرَ"], "h": "«٩ + ١ = ١٠». Kemudian tambah «٣» lagi.", "e": "«٩ + ٤ = ١٣», iaitu «ثَلَاثَةَ عَشَرَ»."},
+    {"s": "Nombor 13 hingga 16", "q": "Hitung. Pilih jawapan dalam bahasa Arab.", "ar": "١٥ + ١ = ؟", "k": 1, "o": ["سِتَّةَ عَشَرَ", "خَمْسَةَ عَشَرَ", "أَرْبَعَةَ عَشَرَ", "سَبْعَةَ عَشَرَ"], "h": "Cari nombor yang datang selepas «١٥».", "e": "«١٥ + ١ = ١٦», iaitu «سِتَّةَ عَشَرَ»."}
+  ]
+},
+{
+  "id": "u3", "no": "Unit 3", "title": "Badanku yang Sihat", "ar": "جِسْمِي السَّلِيمُ", "sub": "Huruf «ه» «ر», anggota badan, «عِنْدِي», bersih dan cantik, nombor 17–20", "theme": "Empat unit dalam buku teks", "pages": "hlm. 49–74", "colour": "#8FD5C2", "art": "gajah", "artColour": "#A9B8E8", "topics": ["Huruf «ه» dan «ر»", "Anggota Badan", "«هٰذَا», «هٰذِهِ» dan «عِنْدِي»", "Bersih dan Cantik", "Nombor 17 hingga 20"], "tp": {"Huruf «ه» dan «ر»": "hlm. 50–55", "Anggota Badan": "hlm. 56–60", "«هٰذَا», «هٰذِهِ» dan «عِنْدِي»": "hlm. 61–64", "Bersih dan Cantik": "hlm. 65–67", "Nombor 17 hingga 20": "hlm. 69–72"},
+  "q": [
+    {"s": "Huruf «ه» dan «ر»", "q": "Apakah huruf pertama bagi perkataan ini?", "ar": "هَدِيَّةٌ", "pic": "🎁", "o": ["ه", "د", "ي", "ة"], "h": "Baca dari kanan; huruf ini bunyinya «ha».", "e": "«هَدِيَّةٌ» ialah hadiah. Huruf pertamanya ialah «ه» (ha)."},
+    {"s": "Huruf «ه» dan «ر»", "q": "Perkataan manakah bermula dengan huruf «ر» (ra)?", "o": ["رَأْسٌ", "هِرَّةٌ", "لَهَبٌ", "قَهْوَةٌ"], "h": "Perkataan ini ialah anggota badan di atas leher.", "e": "«رَأْسٌ» ialah kepala dan bermula dengan «ر». «هِرَّةٌ» ada «ر» tetapi di tengah."},
+    {"s": "Huruf «ه» dan «ر»", "q": "Apakah maksud perkataan ini?", "ar": "هِرَّةٌ", "pic": "🐈", "o": ["kucing", "api", "kepala", "kopi"], "h": "Ia suka makan ikan.", "e": "«هِرَّةٌ» bermaksud kucing. «لَهَبٌ» ialah api dan «رَأْسٌ» ialah kepala."},
+    {"s": "Huruf «ه» dan «ر»", "q": "Apakah maksud perkataan ini?", "ar": "لَهَبٌ", "pic": "🔥", "o": ["api", "kucing", "hadiah", "bulan sabit"], "h": "Ia panas dan boleh membakar.", "e": "«لَهَبٌ» bermaksud api. «هِلَالٌ» ialah bulan sabit."},
+    {"s": "Anggota Badan", "q": "Apakah maksud perkataan ini?", "ar": "رَأْسٌ", "pic": "🙂", "o": ["kepala", "rambut", "tangan", "kaki"], "h": "Ia berada di bahagian paling atas badan.", "e": "«رَأْسٌ» bermaksud kepala. Rambut ialah «شَعْرٌ»."},
+    {"s": "Anggota Badan", "q": "Apakah maksud perkataan ini?", "ar": "عَيْنٌ", "pic": "👁️", "o": ["mata", "hidung", "mulut", "telinga"], "h": "Kita menggunakannya untuk melihat.", "e": "«عَيْنٌ» bermaksud mata."},
+    {"s": "Anggota Badan", "q": "Pilih perkataan Arab bagi hidung.", "pic": "👃", "o": ["أَنْفٌ", "أُذُنٌ", "فَمٌ", "يَدٌ"], "h": "Huruf «ن» ada di tengah perkataan ini.", "e": "Hidung ialah «أَنْفٌ». «أُذُنٌ» ialah telinga, «فَمٌ» ialah mulut dan «يَدٌ» ialah tangan."},
+    {"s": "Anggota Badan", "q": "Apakah maksud perkataan ini?", "ar": "أَسْنَانٌ", "pic": "🦷", "o": ["gigi", "lidah", "pipi", "bahu"], "h": "Kita menggunakannya untuk mengunyah makanan.", "e": "«أَسْنَانٌ» bermaksud gigi. Lidah ialah «لِسَانٌ»."},
+    {"s": "Anggota Badan", "q": "Pilih perkataan Arab bagi perut.", "o": ["بَطْنٌ", "كَتِفٌ", "رِجْلٌ", "خَدٌّ"], "h": "Makanan yang kita makan masuk ke sini.", "e": "Perut ialah «بَطْنٌ». «كَتِفٌ» ialah bahu, «رِجْلٌ» ialah kaki dan «خَدٌّ» ialah pipi."},
+    {"s": "Anggota Badan", "q": "Kumpulan manakah semuanya berada di muka?", "k": 1, "o": ["عَيْنٌ، أَنْفٌ، فَمٌ", "عَيْنٌ، يَدٌ، فَمٌ", "أَنْفٌ، رِجْلٌ، أُذُنٌ", "لِسَانٌ، بَطْنٌ، خَدٌّ"], "h": "Tangan, kaki dan perut tidak berada di muka.", "e": "Mata «عَيْنٌ», hidung «أَنْفٌ» dan mulut «فَمٌ» semuanya di muka. «يَدٌ» ialah tangan, «رِجْلٌ» ialah kaki dan «بَطْنٌ» ialah perut."},
+    {"s": "«هٰذَا», «هٰذِهِ» dan «عِنْدِي»", "q": "Cikgu bertanya «مَا هٰذَا؟» sambil menunjuk pipi. Pilih jawapan yang betul.", "pic": "🙂", "o": ["هٰذَا خَدٌّ.", "هٰذِهِ خَدٌّ.", "هٰذَا عَيْنٌ.", "هٰذِهِ فَمٌ."], "h": "Semak: pipi menggunakan «هٰذَا» atau «هٰذِهِ»?", "e": "«هٰذَا خَدٌّ» bermaksud ini pipi. «خَدٌّ» menggunakan «هٰذَا», manakala «عَيْنٌ» menggunakan «هٰذِهِ»."},
+    {"s": "«هٰذَا», «هٰذِهِ» dan «عِنْدِي»", "q": "Ayat manakah yang BETUL?", "k": 1, "o": ["هٰذِهِ أُذُنٌ.", "هٰذَا أُذُنٌ.", "هٰذَا عَيْنٌ.", "هٰذِهِ فَمٌ."], "h": "Semak setiap anggota badan: yang mana menggunakan «هٰذَا» atau «هٰذِهِ»?", "e": "«أُذُنٌ» (telinga) menggunakan «هٰذِهِ», jadi «هٰذِهِ أُذُنٌ» betul. «عَيْنٌ» menggunakan «هٰذِهِ» dan «فَمٌ» menggunakan «هٰذَا»."},
+    {"s": "«هٰذَا», «هٰذِهِ» dan «عِنْدِي»", "q": "Apakah maksud perkataan ini?", "ar": "عِنْدِي", "o": ["saya ada", "kamu ada", "ini", "apa"], "h": "Ia dipakai sebelum nama anggota badan.", "e": "«عِنْدِي» bermaksud saya ada. «عِنْدِي فَمٌ» bermaksud saya ada mulut."},
+    {"s": "«هٰذَا», «هٰذِهِ» dan «عِنْدِي»", "q": "Pilih ayat Arab bagi: Saya ada mulut.", "o": ["عِنْدِي فَمٌ.", "هٰذَا فَمٌ.", "عِنْدِي رِجْلٌ.", "عِنْدِي أَنْفٌ."], "h": "Ayat «saya ada» bermula dengan «عِنْدِي».", "e": "Saya ada mulut ialah «عِنْدِي فَمٌ». «هٰذَا فَمٌ» bermaksud ini mulut."},
+    {"s": "Bersih dan Cantik", "q": "Apakah maksud perkataan ini?", "ar": "نَظِيفٌ", "o": ["bersih", "cantik", "besar", "pantas"], "h": "Gigi yang digosok setiap hari akan menjadi begini.", "e": "«نَظِيفٌ» bermaksud bersih. «جَمِيلٌ» bermaksud cantik."},
+    {"s": "Bersih dan Cantik", "q": "Lengkapkan ayat ini (Saya ada rambut yang bersih).", "ar": "عِنْدِي شَعْرٌ ___.", "o": ["نَظِيفٌ", "نَظِيفَةٌ", "جَمِيلَةٌ", "هٰذَا"], "h": "«شَعْرٌ» menggunakan kata lelaki, jadi sifatnya tiada «ة».", "e": "«عِنْدِي شَعْرٌ نَظِيفٌ» bermaksud saya ada rambut yang bersih. Sifat «نَظِيفٌ» tiada «ة» kerana «شَعْرٌ» menggunakan kata lelaki."},
+    {"s": "Bersih dan Cantik", "q": "Ayat manakah yang BETUL?", "k": 1, "o": ["عِنْدِي أَسْنَانٌ نَظِيفَةٌ.", "عِنْدِي أَسْنَانٌ نَظِيفٌ.", "عِنْدِي أَنْفٌ جَمِيلَةٌ.", "عِنْدِي عَيْنٌ جَمِيلٌ."], "h": "Sifat mesti sepadan: perempuan ada «ة» di hujung, lelaki tiada.", "e": "«عِنْدِي أَسْنَانٌ نَظِيفَةٌ» betul kerana «أَسْنَانٌ» menggunakan «هٰذِهِ». «أَنْفٌ» pula sepadan dengan «جَمِيلٌ», dan «عَيْنٌ» dengan «جَمِيلَةٌ»."},
+    {"s": "Nombor 17 hingga 20", "q": "«سَبْعَةَ عَشَرَ» ialah nombor …", "o": ["17", "18", "19", "20"], "h": "«سَبْعَةٌ» ialah tujuh. Tambah sepuluh.", "e": "«سَبْعَةَ عَشَرَ» ialah 17 («١٧»), iaitu 7 + 10."},
+    {"s": "Nombor 17 hingga 20", "q": "Nombor 20 dalam bahasa Arab ialah …", "o": ["عِشْرُونَ", "تِسْعَةَ عَشَرَ", "ثَمَانِيَةَ عَشَرَ", "عَشَرَةٌ"], "h": "Nombor ini tidak berakhir dengan «عَشَرَ».", "e": "Nombor 20 ialah «عِشْرُونَ». «تِسْعَةَ عَشَرَ» ialah 19 dan «ثَمَانِيَةَ عَشَرَ» ialah 18."},
+    {"s": "Nombor 17 hingga 20", "q": "Hitung. Pilih jawapan dalam bahasa Arab.", "ar": "١٧ + ٣ = ؟", "k": 1, "o": ["عِشْرُونَ", "تِسْعَةَ عَشَرَ", "ثَمَانِيَةَ عَشَرَ", "سَبْعَةَ عَشَرَ"], "h": "Tambah tiga kepada tujuh belas.", "e": "«١٧ + ٣ = ٢٠», iaitu «عِشْرُونَ»."}
+  ]
+},
+{
+  "id": "u4", "no": "Unit 4", "title": "Saya Jaga Alat Tulis", "ar": "أُحَافِظُ عَلَى الأَدَوَاتِ الدِّرَاسِيَّةِ", "sub": "Huruf «ف» «ط» «ق», alat tulis, «عَلَى» dan «فِي», nombor dan harga", "theme": "Empat unit dalam buku teks", "pages": "hlm. 75–101", "colour": "#8EC5F5", "art": "pensel", "artColour": "#FFD84A", "topics": ["Huruf «ف», «ط» dan «ق»", "Alat Tulis", "Ayat «هٰذَا» dan «عِنْدِي»", "«عَلَى» dan «فِي»", "Nombor dan Harga"], "tp": {"Huruf «ف», «ط» dan «ق»": "hlm. 76–83", "Alat Tulis": "hlm. 84–88", "Ayat «هٰذَا» dan «عِنْدِي»": "hlm. 89–92", "«عَلَى» dan «فِي»": "hlm. 93–96", "Nombor dan Harga": "hlm. 98–99"},
+  "q": [
+    {"s": "Huruf «ف», «ط» dan «ق»", "q": "Apakah huruf pertama bagi perkataan ini?", "ar": "فُلُوسٌ", "pic": "💵", "o": ["ف", "ق", "ط", "س"], "h": "Huruf ini ada satu titik di atas.", "e": "«فُلُوسٌ» ialah wang. Huruf pertamanya ialah «ف» (fa) yang ada satu titik di atas."},
+    {"s": "Huruf «ف», «ط» dan «ق»", "q": "Apakah huruf pertama bagi perkataan ini?", "ar": "طَبِيبَةٌ", "pic": "👩‍⚕️", "o": ["ط", "ب", "ق", "ف"], "h": "Huruf ini tiada titik.", "e": "«طَبِيبَةٌ» ialah doktor perempuan. Huruf pertamanya ialah «ط» (tho) yang tiada titik."},
+    {"s": "Huruf «ف», «ط» dan «ق»", "q": "Apakah huruf pertama bagi perkataan ini?", "ar": "قَلَمٌ", "pic": "🖊️", "o": ["ق", "ك", "ف", "ل"], "h": "Huruf ini ada dua titik di atas.", "e": "«قَلَمٌ» ialah pen. Huruf pertamanya ialah «ق» (qaf) yang ada dua titik di atas."},
+    {"s": "Huruf «ف», «ط» dan «ق»", "q": "Perkataan manakah bermula dengan huruf «ق» (qaf)?", "pic": "🚆", "o": ["قِطَارٌ", "فَطِيرَةٌ", "طَمَاطِمُ", "فُلُوسٌ"], "h": "Perkataan ini ialah kenderaan yang bergerak di atas landasan.", "e": "«قِطَارٌ» ialah tren dan bermula dengan «ق». «فَطِيرَةٌ» dan «فُلُوسٌ» bermula dengan «ف»; «طَمَاطِمُ» bermula dengan «ط»."},
+    {"s": "Huruf «ف», «ط» dan «ق»", "q": "Perkataan manakah ada huruf «ط» (tho)?", "pic": "🌧️", "o": ["مَطَرٌ", "قَلَمٌ", "فُلُوسٌ", "قُرُودٌ"], "h": "Perkataan ini turun dari langit dan membasahi bumi.", "e": "«مَطَرٌ» ialah hujan, dan ada «ط» di tengah perkataan."},
+    {"s": "Alat Tulis", "q": "Apakah maksud perkataan ini?", "ar": "قَلَمُ رَصَاصٍ", "pic": "✏️", "o": ["pensel", "pen", "pensel warna", "pembaris"], "h": "Tulisannya boleh dipadam dengan pemadam.", "e": "«قَلَمُ رَصَاصٍ» bermaksud pensel. «قَلَمٌ» ialah pen dan «قَلَمُ تَلْوِينٍ» ialah pensel warna."},
+    {"s": "Alat Tulis", "q": "Apakah maksud perkataan ini?", "ar": "مِسْطَرَةٌ", "pic": "📏", "o": ["pembaris", "beg", "buku", "kertas"], "h": "Kita menggunakannya untuk melukis garisan lurus.", "e": "«مِسْطَرَةٌ» bermaksud pembaris."},
+    {"s": "Alat Tulis", "q": "Apakah maksud perkataan ini?", "ar": "حَقِيبَةٌ", "pic": "🎒", "o": ["beg", "bekas pensel", "buku tulis", "pemadam"], "h": "Kita membawa buku ke sekolah di dalamnya.", "e": "«حَقِيبَةٌ» bermaksud beg. Bekas pensel ialah «مِقْلَمَةٌ»."},
+    {"s": "Alat Tulis", "q": "Pilih perkataan Arab bagi buku.", "pic": "📖", "o": ["كِتَابٌ", "دَفْتَرٌ", "وَرَقَةٌ", "مِمْحَاةٌ"], "h": "Kita membacanya untuk belajar.", "e": "Buku ialah «كِتَابٌ». «دَفْتَرٌ» ialah buku tulis, «وَرَقَةٌ» ialah kertas dan «مِمْحَاةٌ» ialah pemadam."},
+    {"s": "Alat Tulis", "q": "Anda mahu memadam tulisan yang salah. Alat manakah yang anda perlukan?", "k": 1, "o": ["مِمْحَاةٌ", "مِبْرَاةٌ", "مِسْطَرَةٌ", "مِقْلَمَةٌ"], "h": "Alat ini membuang tulisan pensel pada kertas.", "e": "«مِمْحَاةٌ» ialah pemadam. «مِبْرَاةٌ» ialah pengasah pensel, «مِسْطَرَةٌ» ialah pembaris dan «مِقْلَمَةٌ» ialah bekas pensel."},
+    {"s": "Ayat «هٰذَا» dan «عِنْدِي»", "q": "Lengkapkan ayat ini (Ini buku).", "ar": "___ كِتَابٌ.", "pic": "📖", "o": ["هٰذَا", "هٰذِهِ", "عِنْدِي", "أَنَا"], "h": "Perkataan «كِتَابٌ» tiada «ة» di hujung.", "e": "«هٰذَا كِتَابٌ» bermaksud ini buku. «هٰذَا» digunakan untuk perkataan lelaki."},
+    {"s": "Ayat «هٰذَا» dan «عِنْدِي»", "q": "Lengkapkan ayat ini (Ini pembaris).", "ar": "___ مِسْطَرَةٌ.", "pic": "📏", "o": ["هٰذِهِ", "هٰذَا", "عِنْدِي", "أَنَا"], "h": "Perkataan «مِسْطَرَةٌ» ada «ة» di hujung.", "e": "«هٰذِهِ مِسْطَرَةٌ» bermaksud ini pembaris. «هٰذِهِ» digunakan untuk perkataan perempuan."},
+    {"s": "Ayat «هٰذَا» dan «عِنْدِي»", "q": "Pilih ayat Arab bagi: Saya ada beg.", "pic": "🎒", "o": ["عِنْدِي حَقِيبَةٌ.", "هٰذِهِ حَقِيبَةٌ.", "عِنْدِي كِتَابٌ.", "عِنْدِي مِبْرَاةٌ."], "h": "Ayat «saya ada» bermula dengan «عِنْدِي».", "e": "Saya ada beg ialah «عِنْدِي حَقِيبَةٌ». «هٰذِهِ حَقِيبَةٌ» bermaksud ini beg."},
+    {"s": "Ayat «هٰذَا» dan «عِنْدِي»", "q": "Ayat manakah yang SALAH?", "k": 1, "o": ["هٰذِهِ دَفْتَرٌ.", "هٰذَا دَفْتَرٌ.", "هٰذِهِ وَرَقَةٌ.", "هٰذَا قَلَمٌ."], "h": "Semak sama ada setiap alat tulis menggunakan «هٰذَا» atau «هٰذِهِ».", "e": "«دَفْتَرٌ» menggunakan «هٰذَا», jadi ayat yang betul ialah «هٰذَا دَفْتَرٌ». «هٰذِهِ دَفْتَرٌ» adalah salah."},
+    {"s": "«عَلَى» dan «فِي»", "q": "Apakah maksud perkataan ini?", "ar": "عَلَى", "o": ["di atas", "di dalam", "di bawah", "di mana"], "h": "Pen yang diletakkan pada permukaan buku berada begini.", "e": "«عَلَى» bermaksud di atas. «الْقَلَمُ عَلَى الْكِتَابِ» bermaksud pen di atas buku."},
+    {"s": "«عَلَى» dan «فِي»", "q": "Apakah maksud perkataan ini?", "ar": "فِي", "o": ["di dalam", "di atas", "di bawah", "di mana"], "h": "Pengasah pensel berada begini apabila disimpan dalam bekas pensel.", "e": "«فِي» bermaksud di dalam. «الْمِبْرَاةُ فِي الْمِقْلَمَةِ» bermaksud pengasah pensel di dalam bekas pensel."},
+    {"s": "«عَلَى» dan «فِي»", "q": "Lengkapkan ayat ini (Pen di atas buku).", "ar": "الْقَلَمُ ___ الْكِتَابِ.", "o": ["عَلَى", "فِي", "مَنْ", "أَيْنَ"], "h": "Pen terletak pada permukaan buku.", "e": "«الْقَلَمُ عَلَى الْكِتَابِ» bermaksud pen di atas buku."},
+    {"s": "«عَلَى» dan «فِي»", "q": "Bekas pensel ada di dalam beg. Lengkapkan ayat ini.", "ar": "الْمِقْلَمَةُ ___ الْحَقِيبَةِ.", "k": 1, "o": ["فِي", "عَلَى", "هٰذِهِ", "عِنْدِي"], "h": "Fikirkan: bekas pensel disimpan di tempat tertutup.", "e": "«الْمِقْلَمَةُ فِي الْحَقِيبَةِ» bermaksud bekas pensel di dalam beg."},
+    {"s": "Nombor dan Harga", "q": "Dalam jualan alat tulis, pensel warna berharga RM18. Apakah 18 dalam bahasa Arab?", "o": ["ثَمَانِيَةَ عَشَرَ", "سَبْعَةَ عَشَرَ", "تِسْعَةَ عَشَرَ", "عِشْرُونَ"], "h": "«ثَمَانِيَةٌ» ialah lapan. Tambah sepuluh.", "e": "18 ialah «ثَمَانِيَةَ عَشَرَ», iaitu 8 + 10."},
+    {"s": "Nombor dan Harga", "q": "Anda ada RM10 dan menerima RM5 lagi. Berapakah jumlahnya dalam bahasa Arab?", "ar": "١٠ + ٥ = ؟", "k": 1, "o": ["خَمْسَةَ عَشَرَ", "أَرْبَعَةَ عَشَرَ", "ثَلَاثَةَ عَشَرَ", "اِثْنَا عَشَرَ"], "h": "Tambah «١٠» dan «٥».", "e": "«١٠ + ٥ = ١٥», iaitu «خَمْسَةَ عَشَرَ». Jadi anda ada RM15."}
+  ]
+}
+];
+
+const TOTAL_Q = UNITS.reduce((n, u) => n + u.q.length, 0);
+const MIX_SIZE = 20;
+
+/* ---------------- alat bantu kecil ---------------- */
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const reduced = () => window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const LETTERS = ["A", "B", "C", "D"];
+
+/* ___ menjadi kotak tempat kosong; *perkataan* ditonjolkan; «teks Arab» dilukis kanan-ke-kiri */
+const AR_RE = new RegExp("[" + String.fromCharCode(0x600) + "-" + String.fromCharCode(0x6FF) + "]");
+const BLANK = '<span class="blank">&nbsp;</span>';
+const arSpan = (inner) => `<span class="ar" lang="ar" dir="rtl">${inner}</span>`;
+function qHTML(text) {
+  return esc(text)
+    .replace(/«([^»]*)»/g, (m, a) => arSpan(a.replace(/_{2,}/g, BLANK)))
+    .replace(/_{2,}/g, BLANK)
+    .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+}
+/* Pilihan yang hanya Arab dibungkus sendiri; pilihan campuran perlu « ». */
+const isArOpt = (s) => s.indexOf("«") < 0 && AR_RE.test(s) && !/[A-Za-z]/.test(s);
+const optHTML = (s) => (s.indexOf("«") >= 0 ? qHTML(s) : isArOpt(s) ? arSpan(esc(s)) : esc(s));
+const arInline = (s) => arSpan(esc(s).replace(/_{2,}/g, BLANK));
+const arBig = (s) => `<span class="big ar${s.length > 14 ? " long" : ""}" lang="ar" dir="rtl">${esc(s).replace(/_{2,}/g, BLANK)}</span>`;
+const hintHTML = (Q) => (Q.pic ? `<span class="em-s" aria-hidden="true">${Q.pic}</span>` : "") + qHTML(Q.h);
+function shuffle(a) {
+  const r = a.slice();
+  for (let i = r.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [r[i], r[j]] = [r[j], r[i]]; }
+  return r;
+}
+let toastTimer = null;
+function toast(msg) {
+  const t = $("toast");
+  t.textContent = msg; t.classList.add("on");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("on"), 2600);
+}
+const artFor = (u) => ART[u.art](u.artColour);
+const unitLabel = (u) => `${u.no} · ${u.title}`;
+const starsFor = (score, total) => {
+  const pct = total ? score / total : 0;
+  return pct >= 0.9 ? 3 : pct >= 0.7 ? 2 : pct >= 0.5 ? 1 : 0;
+};
+const STAR_SVG = (lit, cls) =>
+  `<svg class="${lit ? "lit " : "off "}${cls || ""}" viewBox="0 0 24 24" fill="${lit ? "var(--star)" : "var(--star-off)"}" stroke="var(--line)" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8-5.4 2.8 1-6L3.3 9.6l6-.9z"/></svg>`;
+const TICK = `<svg class="mark" viewBox="0 0 24 24" fill="none" stroke="var(--good)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>`;
+const CROSS = `<svg class="mark" viewBox="0 0 24 24" fill="none" stroke="var(--bad)" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
+
+/* ---------------- data yang disimpan (dalam pelayar ini sahaja) ---------------- */
+const KEY = "arab-t2-kuiz-v1";
+let store = loadStore();
+function loadStore() {
+  try {
+    const d = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (d && typeof d === "object") {
+      return {
+        best: d.best && typeof d.best === "object" ? d.best : {},
+        learnt: Array.isArray(d.learnt) ? d.learnt.filter((k) => typeof k === "string") : [],
+        muted: !!d.muted,
+        student: d.student && typeof d.student.name === "string" ? { name: d.student.name, cls: String(d.student.cls || "") } : null,
+        slips: Array.isArray(d.slips) ? d.slips.filter((s) => s && typeof s.id === "string" && typeof s.code === "string").slice(0, 50) : [],
+        reqs: Array.isArray(d.reqs) ? d.reqs.filter((r) => r && typeof r === "object" && typeof r.subject === "string" && typeof r.level === "string").slice(-20) : []
+      };
+    }
+  } catch (e) {}
+  return { best: {}, learnt: [], muted: false, student: null, slips: [], reqs: [] };
+}
+function saveStore() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
+
+/* ---------------- bunyi kecil ---------------- */
+let actx = null;
+const SOUNDS = {
+  tap: (c, t) => blip(c, t, 520, 0.07, 0.16),
+  good: (c, t) => { blip(c, t, 660, 0.09, 0.2); blip(c, t + 0.1, 880, 0.12, 0.2); },
+  bad: (c, t) => blip(c, t, 200, 0.16, 0.22, "square"),
+  win: (c, t) => [523, 659, 784, 1047].forEach((f, i) => blip(c, t + i * 0.11, f, 0.16, 0.22))
+};
+function blip(c, t, freq, dur, vol, type) {
+  const o = c.createOscillator(), g = c.createGain();
+  o.type = type || "sine"; o.frequency.value = freq;
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(vol, t + 0.012);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.connect(g); g.connect(c.destination); o.start(t); o.stop(t + dur + 0.02);
+}
+function sound(name) {
+  if (store.muted || !SOUNDS[name]) return;
+  try {
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === "suspended") actx.resume();
+    SOUNDS[name](actx, actx.currentTime);
+  } catch (e) {}
+}
+function renderSoundBtn() {
+  const on = !store.muted, b = $("btn-sound");
+  b.setAttribute("aria-pressed", String(on));
+  b.setAttribute("aria-label", on ? "Matikan bunyi" : "Hidupkan bunyi");
+  b.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/>${on ? '<path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/>' : '<path d="M16 9.5l5 5M21 9.5l-5 5"/>'}</svg>`;
+}
+
+/* ---------------- skrin ---------------- */
+function show(which) {
+  ["home", "quiz", "results"].forEach((id) => { $(id).hidden = id !== which; });
+  const el = $(which);
+  if (el.hasAttribute("tabindex")) el.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: reduced() ? "auto" : "smooth" });
+}
+
+/* ---------------- laman utama ---------------- */
+function renderHome() {
+  $("parade").innerHTML = PARADE.map(artOf).join("");
+  $("mix-trio").innerHTML = MIX_TRIO.map(artOf).join("");
+  $("st-total").textContent = TOTAL_Q;
+  $("st-units").textContent = UNITS.length;
+  $("st-learnt").textContent = store.learnt.length;
+  $("st-meter").style.width = (TOTAL_Q ? (store.learnt.length / TOTAL_Q) * 100 : 0) + "%";
+  $("st-cleared").textContent = UNITS.filter((u) => (store.best[u.id] || {}).stars === 3).length;
+  renderSlipCount();
+
+  /* unit dikumpulkan mengikut tajuk buku teks */
+  const cardHTML = (u, i) => {
+    const b = store.best[u.id];
+    const stars = b ? b.stars : 0;
+    return `<button class="unit" type="button" data-unit="${i}" style="--u:${u.colour}">
+      ${b ? `<span class="best">terbaik ${b.score}/${b.total}</span>` : ""}
+      <span class="pic">${artFor(u)}</span>
+      <span class="txt">
+        <span class="no">${esc(u.no)} · ${esc(u.pages)}</span>
+        <h3>${esc(u.title)}</h3>
+        <span class="uar ar" lang="ar" dir="rtl">${esc(u.ar)}</span>
+        <p>${qHTML(u.sub)}</p>
+        <span class="stars" role="img" aria-label="${stars} daripada 3 bintang">${[0, 1, 2].map((n) => STAR_SVG(n < stars)).join("")}</span>
+      </span>
+    </button>`;
+  };
+  let out = "", seen = null;
+  UNITS.forEach((u, i) => {
+    if (u.theme !== seen) {
+      if (seen !== null) out += `</div>`;
+      out += `<h3 class="theme-h">${esc(u.theme)}</h3><div class="units">`;
+      seen = u.theme;
+    }
+    out += cardHTML(u, i);
+  });
+  if (seen !== null) out += `</div>`;
+  $("units").innerHTML = out;
+}
+
+/* ---------------- satu pusingan ---------------- */
+let S = null;
+const QOF = (it) => UNITS[it.u].q[it.i];
+const keyOf = (it) => `${UNITS[it.u].id}:${it.i}`;
+
+function startUnit(index) {
+  const u = UNITS[index];
+  S = {
+    mode: "unit", unitIndex: index, label: unitLabel(u),
+    items: shuffle(u.q.map((_, i) => ({ u: index, i }))).map(withOrder),
+    cur: 0, score: 0, hints: 0, results: [], answered: false, usedHint: false, slip: null
+  };
+  show("quiz"); renderQuestion();
+}
+function startMix() {
+  const all = [];
+  UNITS.forEach((u, ui) => u.q.forEach((_, i) => all.push({ u: ui, i })));
+  S = {
+    mode: "mix", unitIndex: null, label: "Kuiz Rampaian · semua empat unit",
+    items: shuffle(all).slice(0, MIX_SIZE).map(withOrder),
+    cur: 0, score: 0, hints: 0, results: [], answered: false, usedHint: false, slip: null
+  };
+  show("quiz"); renderQuestion();
+}
+function withOrder(it) { it.order = shuffle([0, 1, 2, 3]); return it; }
+
+function renderQuestion() {
+  const it = S.items[S.cur], u = UNITS[it.u], Q = QOF(it);
+  S.answered = false; S.usedHint = false;
+  document.documentElement.style.setProperty("--unit", u.colour);
+  $("q-track").style.width = ((S.cur) / S.items.length) * 100 + "%";
+  $("q-count").textContent = `${S.cur + 1}/${S.items.length}`;
+  const pic = $("q-pic");
+  pic.className = "pic"; pic.innerHTML = artFor(u);
+  $("q-unit").textContent = S.mode === "mix" ? `Kuiz Rampaian · ${u.no}` : u.no;
+  $("q-topic").innerHTML = qHTML(Q.s) + (Q.k ? ' <span class="kbat">KBAT</span>' : "");
+  $("q-text").innerHTML = qHTML(Q.q);
+  const show = (Q.em ? `<span class="em" aria-hidden="true">${Q.em}</span>` : "") + (Q.ar ? arBig(Q.ar) : "");
+  $("q-show").innerHTML = show; $("q-show").hidden = !show;
+  $("q-opts").innerHTML = it.order.map((oi, pos) =>
+    `<button class="opt${isArOpt(Q.o[oi]) ? " arc" : ""}" type="button" data-oi="${oi}"><span class="k">${LETTERS[pos]}</span><span class="t">${optHTML(Q.o[oi])}</span></button>`).join("");
+  $("q-hint").hidden = true; $("q-hint-text").innerHTML = hintHTML(Q);
+  $("q-why").hidden = true; $("q-why").innerHTML = "";
+  $("btn-hint").disabled = false;
+  $("btn-next").disabled = true;
+  $("btn-next").textContent = S.cur === S.items.length - 1 ? "Lihat keputusan saya" : "Seterusnya";
+}
+
+function answer(oi) {
+  if (S.answered) return;
+  S.answered = true;
+  const it = S.items[S.cur], Q = QOF(it), right = oi === 0;
+  const opts = Array.from($("q-opts").querySelectorAll(".opt"));
+  opts.forEach((b) => {
+    const v = Number(b.dataset.oi);
+    b.disabled = true;
+    if (v === 0) { b.classList.add("right"); b.insertAdjacentHTML("beforeend", TICK); }
+    else if (v === oi) { b.classList.add("wrong"); b.insertAdjacentHTML("beforeend", CROSS); }
+    else b.classList.add("faded");
+  });
+  const pic = $("q-pic");
+  pic.classList.add(right ? "cheer" : "oops");
+  if (right) {
+    S.score++;
+    if (!S.usedHint) {
+      const k = keyOf(it);
+      if (!store.learnt.includes(k)) { store.learnt.push(k); saveStore(); }
+    }
+  }
+  const why = $("q-why");
+  why.className = "why " + (right ? "ok" : "no");
+  why.innerHTML = `<b>${right ? "Ya, betul!" : "Belum tepat."}</b>${Q.pic ? `<span class="em-s" aria-hidden="true">${Q.pic}</span>` : ""}${qHTML(Q.e)}<span class="pg">Buku teks: ${esc(UNITS[it.u].no)} · ${esc(UNITS[it.u].tp[Q.s] || UNITS[it.u].pages)}</span>`;
+  why.hidden = false;
+  S.results.push({ u: it.u, i: it.i, right, chose: Q.o[oi], answer: Q.o[0] });
+  $("btn-hint").disabled = true;
+  $("btn-next").disabled = false;
+  $("btn-next").focus();
+  sound(right ? "good" : "bad");
+}
+
+function nextQuestion() {
+  if (!S.answered) return;
+  if (S.cur < S.items.length - 1) { S.cur++; renderQuestion(); }
+  else finishRound();
+}
+function showHint() {
+  if (S.answered || S.usedHint) return;
+  S.usedHint = true; S.hints++;
+  $("q-hint").hidden = false;
+  $("btn-hint").disabled = true;
+  sound("tap");
+}
+
+/* ---------------- keputusan ---------------- */
+function finishRound() {
+  const total = S.items.length, score = S.score, stars = starsFor(score, total);
+  if (S.mode === "unit") {
+    const u = UNITS[S.unitIndex], prev = store.best[u.id];
+    if (!prev || score > prev.score) store.best[u.id] = { score, total, stars };
+    saveStore();
+  }
+  S.slip = {
+    id: "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+    unit: S.label, score, total, hints: S.hints, finished: finishedStamp(new Date()), issued: false
+  };
+
+  const face = S.mode === "unit" ? UNITS[S.unitIndex] : UNITS[Math.floor(Math.random() * UNITS.length)];
+  document.documentElement.style.setProperty("--unit", face.colour);
+  $("r-pic").innerHTML = artFor(face);
+  const titles = ["Cubaan yang baik!", "Bagus!", "Syabas!", "Hebat sekali!"];
+  $("r-title").textContent = titles[stars];
+  $("r-sub").textContent = S.label;
+  $("r-score").innerHTML = `${score}<small>/${total}</small>`;
+  $("r-stars").innerHTML = [0, 1, 2].map((n) => STAR_SVG(n < stars)).join("");
+  $("r-review").innerHTML = renderReview();
+  renderSlipCard();
+  show("results");
+  sound(stars >= 2 ? "win" : "tap");
+  if (stars === 3) confetti();
+  renderHome();
+}
+function renderReview() {
+  const misses = S.results.filter((r) => !r.right).length;
+  const head = misses === 0
+    ? "Semua jawapan betul. Baca sekali lagi sebelum anda pergi."
+    : `Soalan untuk diulang kaji (${misses}):`;
+  const list = (misses === 0 ? S.results : S.results.filter((r) => !r.right)).map((r) => {
+    const Q = UNITS[r.u].q[r.i];
+    return `<li class="${r.right ? "" : "miss"}">
+      <span class="qq">${qHTML(Q.q)}</span>${Q.ar ? `<span class="qar">${arInline(Q.ar)}</span>` : ""}
+      <span class="aa">${r.right ? "Anda jawab" : "Jawapannya ialah"} <b>${optHTML(Q.o[0])}</b>${r.right ? "" : ` — anda jawab ${optHTML(r.chose)}`}</span>
+    </li>`;
+  }).join("");
+  return `<h3>${esc(head)}</h3><ol>${list}</ol>`;
+}
+function confetti() {
+  if (reduced()) return;
+  const box = document.createElement("div");
+  box.className = "confetti"; box.setAttribute("aria-hidden", "true");
+  const colours = ["#FFC63D", "#EF6FA0", "#0F7F70", "#7FB2F0", "#F98B52", "#6FD18C"];
+  for (let i = 0; i < 44; i++) {
+    const p = document.createElement("i");
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.background = colours[i % colours.length];
+    p.style.animationDuration = (1.7 + Math.random() * 1.3).toFixed(2) + "s";
+    p.style.animationDelay = (Math.random() * 0.5).toFixed(2) + "s";
+    p.style.transform = `rotate(${Math.random() * 360}deg)`;
+    box.appendChild(p);
+  }
+  document.body.appendChild(box);
+  setTimeout(() => box.remove(), 3600);
+}
+
+/* ============ SLIP KEPUTUSAN DAN PENYEMAK CIKGU ============
+   Slip ialah nota teks biasa yang diserahkan oleh murid — disalin,
+   dikongsi atau dirakam skrin. Halaman ini sendiri tidak menghantar
+   apa-apa ke mana-mana. Kod semakan ialah cincangan (hash) medan
+   pada slip, jadi slip yang disunting kemudian tidak lagi sepadan.
+   Ia menghalang suntingan sambil lewa; ia bukan tandatangan, kerana
+   sesiapa yang membaca fail ini boleh mengira satu. */
+const SLIP_HEAD = "Bahasa Arab Tahun 2 — slip keputusan kuiz";
+const SLIP_SALT = "arab2-kuiz-slip-v1";
+const CROCKFORD = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
+const SLIP_CAP = 50;
+
+/* Huruf kecil, NFKC dan runtuhkan apa-apa yang bukan huruf atau angka,
+   supaya aplikasi pesanan yang menukar "–" kepada "-" tidak merosakkan kod. */
+const canonical = (v) => String(v == null ? "" : v).normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+function fnv1a(str) {
+  let h = 0x811c9dc5;
+  for (const b of new TextEncoder().encode(str)) { h ^= b; h = Math.imul(h, 0x01000193) >>> 0; }
+  return h >>> 0;
+}
+function slipCode(s) {
+  let v = fnv1a([SLIP_SALT, canonical(s.name), canonical(s.cls), canonical(s.unit), s.score, s.total, s.hints, canonical(s.finished)].join("|")) >>> 2;
+  let out = "";
+  for (let i = 0; i < 6; i++) { out = CROCKFORD[v & 31] + out; v >>>= 5; }
+  return out.slice(0, 3) + "-" + out.slice(3);
+}
+/* Baca kod seperti orang menaipnya: O→0, I/L→1, abaikan pemisah. */
+const normCode = (c) => String(c).toUpperCase().replace(/[^0-9A-Z]/g, "").replace(/O/g, "0").replace(/[IL]/g, "1");
+function slipText(s) {
+  return [SLIP_HEAD, `Nama: ${s.name}`, `Kelas: ${s.cls}`, `Unit: ${s.unit}`,
+    `Markah: ${s.score}/${s.total} (pembayang digunakan: ${s.hints})`, `Selesai: ${s.finished}`, `Kod semakan: ${s.code}`].join("\n");
+}
+function finishedStamp(d) {
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+const cleanField = (v) => String(v || "").replace(/\s+/g, " ").trim().slice(0, 40);
+
+function addSlip(slip) {
+  store.slips = [slip].concat(store.slips.filter((s) => s.id !== slip.id)).slice(0, SLIP_CAP);
+  saveStore();
+}
+function issueSlip(pending) {
+  const st = store.student;
+  const slip = Object.assign({}, pending, { name: st.name, cls: st.cls });
+  delete slip.issued;
+  slip.code = slipCode(slip);
+  addSlip(slip);
+  pending.issued = true;
+  return slip;
+}
+const slipById = (id) => store.slips.find((s) => s.id === id);
+
+async function copyText(text) {
+  try { if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(text); return true; } } catch (e) {}
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", "");
+    ta.style.position = "fixed"; ta.style.top = "0"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    const ok = document.execCommand("copy");
+    ta.remove();
+    return !!ok;
+  } catch (e) { return false; }
+}
+const canShare = () => typeof navigator.share === "function";
+async function shareSlip(slip) {
+  try { await navigator.share({ title: "Keputusan kuiz Bahasa Arab saya", text: slipText(slip) }); }
+  catch (e) {} /* dibatalkan atau disekat — tiada apa-apa yang perlu dibuat */
+}
+async function copySlip(slip) {
+  const ok = await copyText(slipText(slip));
+  toast(ok ? "Slip disalin — tampalkannya untuk cikgu" : "Gagal menyalin — rakam skrin sahaja");
+}
+
+function renderSlipCard() {
+  const box = $("r-slip"), pending = S && S.slip;
+  if (!pending) { box.hidden = true; box.innerHTML = ""; return; }
+  box.hidden = false;
+  const st = store.student;
+  if (!pending.issued || S.slipEditing || !st) {
+    box.innerHTML = `
+      <div class="slip-head">
+        <h3>${pending.issued ? "Tukar nama pada slip anda" : "Hantar keputusan anda"}</h3>
+        <p>Tulis nama dan kelas anda untuk membuat slip keputusan bagi cikgu anda.</p>
+      </div>
+      <form class="slip-form" id="slip-form" novalidate>
+        <label for="slip-name">Nama<input id="slip-name" name="name" maxlength="40" autocomplete="name" value="${esc(st ? st.name : "")}"></label>
+        <label for="slip-class">Kelas<input id="slip-class" name="class" maxlength="40" placeholder="cth. 2 Bestari" value="${esc(st ? st.cls : "")}"></label>
+        <button class="btn primary" type="submit">Buat slip saya</button>
+        <p class="slip-err" id="slip-err" aria-live="polite"></p>
+      </form>`;
+    return;
+  }
+  const slip = slipById(pending.id) || issueSlip(pending);
+  box.innerHTML = `
+    <div class="slip-head">
+      <h3>Slip keputusan anda</h3>
+      <p>Hantar kepada cikgu anda: salin, kongsi atau rakam skrin.</p>
+    </div>
+    <dl class="ticket" id="slip-ticket">
+      <dt>Nama</dt><dd>${esc(slip.name)}</dd>
+      <dt>Kelas</dt><dd>${esc(slip.cls)}</dd>
+      <dt>Unit</dt><dd>${esc(slip.unit)}</dd>
+      <dt>Markah</dt><dd>${slip.score}/${slip.total} <span class="muted">· pembayang digunakan ${slip.hints}</span></dd>
+      <dt>Selesai</dt><dd>${esc(slip.finished)}</dd>
+      <dt>Kod semakan</dt><dd class="code" id="slip-code">${esc(slip.code)}</dd>
+    </dl>
+    <div class="slip-actions">
+      <button class="btn primary" type="button" data-slip-copy="${slip.id}">Salin slip</button>
+      ${canShare() ? `<button class="btn" type="button" data-slip-share="${slip.id}">Kongsi…</button>` : ""}
+    </div>
+    <p class="slip-note">Bukan anda? <button class="linkbtn" type="button" id="slip-change">Tukar nama</button> · Setiap slip disimpan dalam <button class="linkbtn" type="button" data-open-slips>Slip keputusan saya</button></p>`;
+}
+function submitSlipForm() {
+  const name = cleanField($("slip-name").value), cls = cleanField($("slip-class").value);
+  if (!name || !cls) {
+    $("slip-err").textContent = !name && !cls ? "Sila tulis nama dan kelas anda." : !name ? "Sila tulis nama anda." : "Sila tulis kelas anda.";
+    (!name ? $("slip-name") : $("slip-class")).focus();
+    return false;
+  }
+  store.student = { name, cls };
+  saveStore();
+  const pending = S.slip;
+  if (pending.issued) {
+    const slip = slipById(pending.id);
+    if (slip) { slip.name = name; slip.cls = cls; slip.code = slipCode(slip); addSlip(slip); }
+  } else issueSlip(pending);
+  S.slipEditing = false;
+  renderSlipCard();
+  renderSlipCount();
+  toast("Slip anda sudah siap!");
+  sound("tap");
+  return true;
+}
+function renderSlipCount() { $("st-slips").textContent = store.slips.length; }
+function renderSlips() {
+  const box = $("myslips");
+  if (!store.slips.length) { box.innerHTML = `<li class="ms-empty">Belum ada slip. Selesaikan satu unit dan buat slip anda!</li>`; return; }
+  box.innerHTML = store.slips.map((s) => `<li>
+    <div class="ms-top"><b>${esc(s.unit)}</b><span class="ms-meta">${s.score}/${s.total} · ${esc(s.finished)}</span></div>
+    <div class="ms-meta">${esc(s.name)} · ${esc(s.cls)} · kod <b>${esc(s.code)}</b></div>
+    <div class="ms-act"><button class="btn sm" type="button" data-slip-copy="${s.id}">Salin</button>${canShare() ? `<button class="btn sm" type="button" data-slip-share="${s.id}">Kongsi…</button>` : ""}</div>
+  </li>`).join("");
+}
+/* Modal mengingati siapa yang membukanya, jadi Escape mengembalikan fokus. */
+const modalOpener = {};
+function openModal(id) {
+  modalOpener[id] = document.activeElement;
+  $(id).hidden = false;
+  const box = $(id).querySelector(".modal-box");
+  if (box) box.focus({ preventScroll: true });
+}
+function closeModal(id) {
+  if ($(id).hidden) return;
+  $(id).hidden = true;
+  const back = modalOpener[id];
+  if (back && document.contains(back) && back.offsetParent !== null) back.focus({ preventScroll: true });
+  modalOpener[id] = null;
+}
+
+/* ---------------- minta kuiz baharu ----------------
+   GitHub Pages hanya menghidangkan fail, jadi ia tidak boleh menerima borang.
+   Permintaan dihantar ke satu Apps Script yang menulis pada Helaian Google.
+   Tampalkan URL "web app" anda pada REQUEST_URL di bawah — selagi ia kosong,
+   borang ini tidak ditunjukkan sama sekali dan nota privasi kekal berkata
+   tiada apa-apa dihantar ke mana-mana. */
+const REQUEST_URL = "";
+const REQ = { url: REQUEST_URL, source: "kuiz-bahasa-arab-tahun2", send: postRequest, cap: 20 };
+const REQ_IDS = ["req-subject", "req-level", "req-topic", "req-role", "req-email", "req-note", "req-web"];
+const REQ_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+/* Apps Script tidak mengembalikan kepala CORS pada lencongannya, jadi ini
+   dihantar sebagai text/plain dalam mod no-cors: permintaan ringkas, tanpa
+   preflight — dan tanpa jawapan yang boleh dibaca. Kegagalan rangkaian masih
+   menolak, jadi permintaan luar talian boleh disimpan dan dihantar kemudian. */
+function postRequest(payload) {
+  return fetch(REQ.url, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload)
+  });
+}
+const requestsOn = () => !!REQ.url;
+function renderRequestEntry() {
+  const on = requestsOn();
+  $("req-entry").hidden = !on;
+  $("req-ask").hidden = !on;
+  $("privacy-send").innerHTML = on
+    ? " Satu-satunya perkara yang meninggalkan peranti ini ialah borang <b>Minta kuiz baharu</b>, dan hanya apabila anda menekan hantar."
+    : " Tiada apa-apa dihantar ke mana-mana.";
+}
+function readRequestForm() {
+  const v = (id, n) => String($(id).value || "").replace(/\s+/g, " ").trim().slice(0, n);
+  return {
+    subject: v("req-subject", 40), level: v("req-level", 40), topic: v("req-topic", 80),
+    role: v("req-role", 40), email: v("req-email", 80),
+    note: String($("req-note").value || "").replace(/[ \t]+/g, " ").trim().slice(0, 300),
+    trap: v("req-web", 80)
+  };
+}
+function clearRequestForm() {
+  REQ_IDS.forEach((id) => { $(id).value = ""; });
+  $("req-err").textContent = "";
+}
+function submitRequestForm() {
+  const f = readRequestForm(), err = $("req-err");
+  if (!f.subject || !f.level) {
+    err.textContent = !f.subject ? "Sila pilih subjek." : "Sila pilih tahap.";
+    (!f.subject ? $("req-subject") : $("req-level")).focus();
+    return false;
+  }
+  if (f.email && !REQ_EMAIL.test(f.email)) {
+    err.textContent = "E-mel itu kelihatan tidak lengkap. Betulkan, atau kosongkan sahaja.";
+    $("req-email").focus();
+    return false;
+  }
+  /* Perangkap robot: manusia tidak nampak medan itu. Berlagak berjaya, hantar tiada. */
+  if (!f.trap) {
+    queueRequest({
+      v: 1, source: REQ.source, subject: f.subject, level: f.level, topic: f.topic,
+      role: f.role, email: f.email, note: f.note, at: new Date().toISOString()
+    });
+  }
+  clearRequestForm();
+  closeModal("req-modal");
+  toast("Terima kasih! Permintaan anda sudah dicatat.");
+  sound("win");
+  return true;
+}
+function queueRequest(payload) {
+  store.reqs = (Array.isArray(store.reqs) ? store.reqs : []).concat([payload]).slice(-REQ.cap);
+  saveStore();
+  flushRequests();
+}
+/* Kuiz ini kerap dibuka luar talian di dalam kelas, jadi permintaan yang gagal
+   dihantar disimpan dan dicuba semula pada kali berikutnya halaman ini dibuka. */
+let reqFlushing = false;
+async function flushRequests() {
+  if (!Array.isArray(store.reqs)) store.reqs = [];
+  if (reqFlushing || !requestsOn()) return store.reqs.length;
+  reqFlushing = true;
+  try {
+    while (store.reqs.length) {
+      try { await REQ.send(store.reqs[0]); }
+      catch (e) { break; }
+      store.reqs = store.reqs.slice(1);
+      saveStore();
+    }
+  } finally { reqFlushing = false; }
+  return store.reqs.length;
+}
+
+/* ---------------- penyemak cikgu ---------------- */
+function parseSlips(text) {
+  const out = [];
+  const blocks = String(text).split(new RegExp(SLIP_HEAD.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i")).slice(1);
+  blocks.forEach((b) => {
+    const get = (label) => {
+      const m = b.match(new RegExp("^\\s*" + label + "\\s*[:：]\\s*(.+)$", "im"));
+      return m ? m[1].trim() : "";
+    };
+    const score = get("Markah").match(/(\d+)\s*\/\s*(\d+)/);
+    const hints = get("Markah").match(/pembayang\s*digunakan\s*[:：]?\s*(\d+)/i);
+    out.push({
+      name: get("Nama"), cls: get("Kelas"), unit: get("Unit"),
+      score: score ? Number(score[1]) : null, total: score ? Number(score[2]) : null,
+      hints: hints ? Number(hints[1]) : 0,
+      finished: get("Selesai"), code: get("Kod semakan")
+    });
+  });
+  return out;
+}
+function checkSlips() {
+  const parsed = parseSlips($("chk-input").value);
+  const out = $("chk-out");
+  if (!parsed.length) {
+    out.innerHTML = `<li class="no"><span class="tag">Tiada dijumpai</span><div>Tampalkan slip yang penuh, bermula dengan baris “${esc(SLIP_HEAD)}”.</div></li>`;
+    return;
+  }
+  out.innerHTML = parsed.map((s) => {
+    const missing = !s.name || !s.cls || !s.unit || s.score === null || !s.finished || !s.code;
+    if (missing) return `<li class="no"><span class="tag">Tidak lengkap</span><div>Ada baris yang hilang pada slip ini, jadi ia tidak dapat disemak.</div></li>`;
+    const ok = normCode(slipCode(s)) === normCode(s.code);
+    return `<li class="${ok ? "ok" : "no"}">
+      <span class="tag">${ok ? "Sepadan" : "Diubah"}</span>
+      <div><b>${esc(s.name)}</b> · ${esc(s.cls)}</div>
+      <div class="ms-meta">${esc(s.unit)} — ${s.score}/${s.total} (pembayang ${s.hints}) · ${esc(s.finished)}</div>
+      ${ok ? "" : `<div class="ms-meta">Kod semakan tidak sepadan dengan slip ini, jadi ada sesuatu yang diubah selepas slip dibuat.</div>`}
+    </li>`;
+  }).join("");
+}
+
+/* ---------------- mula semula (butang segar semula) ---------------- */
+let resetArmed = 0;
+function resetProgress() {
+  const b = $("btn-reset");
+  if (Date.now() > resetArmed) {
+    resetArmed = Date.now() + 4000;
+    b.setAttribute("aria-label", "Tekan sekali lagi untuk kosongkan bintang");
+    b.title = "Tekan sekali lagi untuk kosongkan bintang";
+    toast("Tekan sekali lagi untuk kosongkan bintang");
+    setTimeout(() => {
+      if (Date.now() > resetArmed) { b.setAttribute("aria-label", "Mula semula dari sifar"); b.title = "Mula semula dari sifar"; }
+    }, 4100);
+    return false;
+  }
+  resetArmed = 0;
+  store.best = {}; store.learnt = [];
+  saveStore();
+  b.setAttribute("aria-label", "Mula semula dari sifar");
+  b.title = "Mula semula dari sifar";
+  renderHome();
+  toast("Semua kosong — mari mula semula!");
+  sound("tap");
+  return true;
+}
+
+/* ---------------- pendawaian ---------------- */
+function wire() {
+  $("units").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-unit]");
+    if (b) { sound("tap"); startUnit(Number(b.dataset.unit)); }
+  });
+  $("btn-mix").addEventListener("click", () => { sound("tap"); startMix(); });
+  $("btn-back").addEventListener("click", () => { show("home"); renderHome(); });
+  $("btn-home").addEventListener("click", () => { show("home"); renderHome(); });
+  $("btn-again").addEventListener("click", () => { if (S.mode === "mix") startMix(); else startUnit(S.unitIndex); });
+  $("btn-hint").addEventListener("click", showHint);
+  $("btn-next").addEventListener("click", nextQuestion);
+  $("q-opts").addEventListener("click", (e) => {
+    const b = e.target.closest(".opt");
+    if (b && !b.disabled) answer(Number(b.dataset.oi));
+  });
+  $("btn-sound").addEventListener("click", () => { store.muted = !store.muted; saveStore(); renderSoundBtn(); sound("tap"); });
+  $("btn-reset").addEventListener("click", resetProgress);
+
+  $("results").addEventListener("submit", (e) => { if (e.target.id === "slip-form") { e.preventDefault(); submitSlipForm(); } });
+  $("results").addEventListener("click", (e) => {
+    if (e.target.closest("#slip-change")) { S.slipEditing = true; renderSlipCard(); return; }
+    const c = e.target.closest("[data-slip-copy]");
+    if (c) { const s = slipById(c.dataset.slipCopy); if (s) copySlip(s); return; }
+    const sh = e.target.closest("[data-slip-share]");
+    if (sh) { const s = slipById(sh.dataset.slipShare); if (s) shareSlip(s); }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("[data-open-slips]")) { renderSlips(); openModal("slips-modal"); }
+  });
+  $("btn-slips-close").addEventListener("click", () => closeModal("slips-modal"));
+  $("slips-modal").addEventListener("click", (e) => {
+    if (e.target === $("slips-modal")) { closeModal("slips-modal"); return; }
+    const c = e.target.closest("[data-slip-copy]");
+    if (c) { const s = slipById(c.dataset.slipCopy); if (s) copySlip(s); return; }
+    const sh = e.target.closest("[data-slip-share]");
+    if (sh) { const s = slipById(sh.dataset.slipShare); if (s) shareSlip(s); }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("[data-open-request]")) { clearRequestForm(); openModal("req-modal"); }
+  });
+  $("req-form").addEventListener("submit", (e) => { e.preventDefault(); submitRequestForm(); });
+  $("btn-req-close").addEventListener("click", () => closeModal("req-modal"));
+  $("req-modal").addEventListener("click", (e) => { if (e.target === $("req-modal")) closeModal("req-modal"); });
+
+  $("btn-checker").addEventListener("click", () => openModal("chk-modal"));
+  $("btn-chk-close").addEventListener("click", () => closeModal("chk-modal"));
+  $("btn-chk-run").addEventListener("click", checkSlips);
+  $("btn-chk-clear").addEventListener("click", () => { $("chk-input").value = ""; $("chk-out").innerHTML = ""; });
+  $("chk-modal").addEventListener("click", (e) => { if (e.target === $("chk-modal")) closeModal("chk-modal"); });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (!$("chk-modal").hidden || !$("slips-modal").hidden || !$("req-modal").hidden) {
+      if (e.key === "Escape") { closeModal("chk-modal"); closeModal("slips-modal"); closeModal("req-modal"); }
+      return;
+    }
+    const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement && document.activeElement.tagName);
+    if (typing) return;
+    if (!$("quiz").hidden) {
+      const k = e.key.toUpperCase();
+      const pos = LETTERS.indexOf(k) >= 0 ? LETTERS.indexOf(k) : "1234".indexOf(e.key);
+      if (pos >= 0 && !S.answered) {
+        const b = $("q-opts").querySelectorAll(".opt")[pos];
+        if (b) { e.preventDefault(); b.click(); }
+        return;
+      }
+      if (k === "H") { e.preventDefault(); showHint(); return; }
+      if (e.key === "Enter" && S.answered) { e.preventDefault(); nextQuestion(); return; }
+      if (e.key === "Escape") { e.preventDefault(); show("home"); renderHome(); }
+    } else if (!$("results").hidden && e.key === "Escape") {
+      show("home"); renderHome();
+    }
+  });
+}
+
+function init() {
+  renderSoundBtn();
+  renderHome();
+  renderRequestEntry();
+  wire();
+  const q = new URLSearchParams(location.search);
+  if (q.has("check")) openModal("chk-modal");
+  if (q.has("minta") && requestsOn()) openModal("req-modal");
+  flushRequests();
+}
+if (!new URLSearchParams(location.search).has("selftest")) init();
+
+/* ============ UJIAN KENDIRI (buka dengan ?selftest=1) ============
+   Memeriksa bank soalan, kemudian memandu halaman ini sendiri. */
+(function () {
+  if (!new URLSearchParams(location.search).has("selftest")) return;
+  const results = [];
+  const check = (name, cond, info) => { results.push({ name, ok: !!cond, info: info === undefined ? "" : String(info) }); };
+  const norm = (s) => String(s).normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{M}\p{N} ]/gu, "").replace(/\s+/g, " ").trim();
+  const key = (k) => document.dispatchEvent(new KeyboardEvent("keydown", { key: k, bubbles: true }));
+  const opts = () => Array.from($("q-opts").querySelectorAll(".opt"));
+  const clickRight = () => opts().find((b) => Number(b.dataset.oi) === 0).click();
+  const clickWrong = () => opts().find((b) => Number(b.dataset.oi) !== 0).click();
+  const playAll = (wrongAt) => {
+    for (let i = 0; i < S.items.length; i++) { if (i === wrongAt) clickWrong(); else clickRight(); $("btn-next").click(); }
+  };
+
+  async function run() {
+    /* ---------- 1. bank soalan ---------- */
+    const arOutside = (html) => AR_RE.test(html.replace(/<span class="ar"[^>]*>[\s\S]*?<\/span>/g, ""));
+    const presentation = new RegExp("[" + String.fromCharCode(0xFB50) + "-" + String.fromCharCode(0xFDFF) + String.fromCharCode(0xFE70) + "-" + String.fromCharCode(0xFEFF) + "]");
+    check("empat unit, satu untuk setiap unit buku teks", UNITS.length === 4, UNITS.length);
+    check("80 soalan kesemuanya", TOTAL_Q === 80, TOTAL_Q);
+    check("16 soalan KBAT kesemuanya", UNITS.reduce((n, u) => n + u.q.filter((Q) => Q.k).length, 0) === 16);
+    check("id unit tidak berulang", new Set(UNITS.map((u) => u.id)).size === UNITS.length);
+    check("warna kad unit tidak berulang", new Set(UNITS.map((u) => u.colour)).size === UNITS.length);
+    check("setiap unit ada wataknya sendiri", new Set(UNITS.map((u) => u.art)).size === UNITS.length);
+    check("Kuiz Rampaian lebih kecil daripada keseluruhan bank", MIX_SIZE > 0 && MIX_SIZE < TOTAL_Q, MIX_SIZE);
+    check("semua unit berada di bawah satu tajuk buku teks", new Set(UNITS.map((u) => u.theme)).size === 1);
+    check("perarakan ada lapan watak yang semuanya wujud", PARADE.length === 8 && PARADE.every((p) => typeof ART[p[0]] === "function"), PARADE.length);
+
+    const stems = new Map();
+    let longestWins = 0;
+    UNITS.forEach((u) => {
+      const tag = u.no;
+      check(`${tag}: ada tajuk, ringkasan, tajuk Arab dan nombor halaman`,
+        !!(u.title && u.sub && u.theme && AR_RE.test(u.ar) && !/[A-Za-z]/.test(u.ar) && /^hlm\. \d+(–\d+)?$/.test(u.pages)), u.pages);
+      check(`${tag}: watak wujud`, typeof ART[u.art] === "function", u.art);
+      check(`${tag}: watak menghasilkan svg`, /^<svg[\s\S]*<\/svg>$/.test(artFor(u).trim()));
+      check(`${tag}: dua puluh soalan`, u.q.length === 20, u.q.length);
+      check(`${tag}: empat soalan KBAT`, u.q.filter((Q) => Q.k).length === 4, u.q.filter((Q) => Q.k).length);
+      check(`${tag}: tiga tajuk kecil atau lebih`, u.topics.length >= 3, u.topics.length);
+      const unused = u.topics.filter((t) => !u.q.some((Q) => Q.s === t));
+      check(`${tag}: setiap tajuk kecil diuji`, unused.length === 0, unused.join(", "));
+      const strays = u.q.filter((Q) => !u.topics.includes(Q.s)).map((Q) => Q.s);
+      check(`${tag}: setiap soalan berlabel tajuk kecilnya`, strays.length === 0, strays.join(", "));
+      check(`${tag}: setiap tajuk kecil ada nombor halaman`, u.topics.every((t) => /^hlm\. \d+(–\d+)?$/.test(u.tp[t] || "")));
+      check(`${tag}: teks Arab pada kad dan tajuk dilukis dalam span Arab`,
+        !arOutside(qHTML(u.sub)) && u.topics.every((t) => !arOutside(qHTML(t))));
+
+      u.q.forEach((Q, qi) => {
+        const t = `${tag} S${qi + 1}`, probs = [];
+        if (!Array.isArray(Q.o) || Q.o.length !== 4) probs.push("perlu tepat 4 pilihan");
+        else {
+          if (Q.o.some((o) => typeof o !== "string" || !o || o.trim() !== o)) probs.push("ada pilihan kosong atau ada ruang tersasar");
+          if (new Set(Q.o.map(norm)).size !== Q.o.length) probs.push("ada dua pilihan yang sama");
+          if (Q.o.some((o) => arOutside(optHTML(o)))) probs.push("ada teks Arab di luar span Arab dalam pilihan");
+        }
+        const full = Q.q + " " + (Q.ar || "");
+        if (!Q.q || !/[.?!…]$/.test(Q.q.trim())) probs.push("soalan perlu tanda noktah atau tanda soal");
+        if (!/___|\?|؟|…\s*$|^(Pilih|Lengkapkan|Hitung)\b/.test(full)) probs.push("perlu tempat kosong, tanda soal atau arahan");
+        if (!Q.h || !Q.h.trim()) probs.push("pembayang tiada");
+        if (!Q.e || !Q.e.trim()) probs.push("penerangan tiada");
+        if (Q.e && !/[.?!]['"’”]?$/.test(Q.e.trim())) probs.push("penerangan perlu tanda noktah");
+        if (Q.h && Q.h.length > 110) probs.push("pembayang terlalu panjang untuk murid");
+        if (Q.k && Q.q.trim().length < 18) probs.push("soalan KBAT terlalu pendek");
+        if (Q.k && !/[.?]$/.test(Q.q.trim())) probs.push("soalan KBAT perlu berakhir dengan noktah atau tanda soal");
+        if (Q.ar && (!AR_RE.test(Q.ar) || /[A-Za-z]/.test(Q.ar))) probs.push("baris Arab mesti Arab sahaja");
+        if (Q.em !== undefined && !String(Q.em).trim()) probs.push("em kosong");
+        if (Q.pic !== undefined && !String(Q.pic).trim()) probs.push("pic kosong");
+        [Q.s, Q.q, Q.h, Q.e].forEach((f) => { if (arOutside(qHTML(f))) probs.push("teks Arab di luar « »"); });
+        [Q.q, Q.ar || "", Q.h, Q.e].concat(Q.o).forEach((f) => { if (presentation.test(f)) probs.push("ada bentuk huruf paparan (bukan Unicode biasa)"); });
+        const stem = norm(Q.q + " " + (Q.ar || "") + " " + Q.o.slice().sort().join(" "));
+        if (stems.has(stem)) probs.push("soalan yang sama muncul dalam " + stems.get(stem));
+        else stems.set(stem, t);
+        if (Q.o && Q.o.length === 4) {
+          const ans = Q.o[0].replace(/[«»]/g, "").replace(/[.؟?]+$/, "").trim();
+          if (ans.length >= 4 && (Q.h || "").indexOf(ans) >= 0) probs.push("pembayang mengandungi jawapan");
+          if (AR_RE.test(ans) && !/[A-Za-z]/.test(ans)) {
+            ans.split(/[\s،]+/).filter(Boolean).forEach((w) => { if ((Q.e || "").indexOf(w) < 0) probs.push("penerangan tidak menyebut " + w); });
+          } else if (/^\d+$/.test(ans) && (Q.e || "").indexOf(ans) < 0) probs.push("penerangan tidak menyebut nombor " + ans);
+          const lens = Q.o.map((o) => o.length);
+          if (lens[0] > Math.max(lens[1], lens[2], lens[3])) longestWins++;
+        }
+        check(t, probs.length === 0, probs.join("; "));
+      });
+    });
+    check("jawapan bukan sekadar pilihan terpanjang", longestWins / TOTAL_Q < 0.55, `${longestWins}/${TOTAL_Q}`);
+
+    /* ---------- 2. bahagian kecil ---------- */
+    check("tempat kosong menjadi kotak", /class="blank"/.test(qHTML("Raja ___ negara.")));
+    check("*bintang* menonjolkan perkataan", /<em>bukan<\/em>/.test(qHTML("Yang manakah *bukan* warisan?")));
+    check("html dalam soalan akan dilarikan", qHTML("<b>hai</b>").indexOf("&lt;b&gt;") === 0, qHTML("<b>hai</b>"));
+    check("10/10 mendapat tiga bintang", starsFor(10, 10) === 3);
+    check("9/10 mendapat tiga bintang", starsFor(9, 10) === 3);
+    check("7/10 mendapat dua bintang", starsFor(7, 10) === 2);
+    check("5/10 mendapat satu bintang", starsFor(5, 10) === 1);
+    check("4/10 tiada bintang", starsFor(4, 10) === 0);
+    check("kod yang dibaca dengan O, I dan L masih sepadan", normCode("a0i-1lz") === normCode("AO1-11Z"), normCode("a0i-1lz") + " / " + normCode("AO1-11Z"));
+
+    /* ---------- 2b. teks Arab ---------- */
+    check("«…» dilukis sebagai span Arab kanan-ke-kiri", /<span class="ar" lang="ar" dir="rtl">/.test(qHTML("Pilih «أَنَا» ya.")));
+    check("tempat kosong dalam « » menjadi kotak", /class="blank"/.test(qHTML("«___ جَدٌّ.»")));
+    check("tempat kosong dalam baris Arab besar menjadi kotak", /class="blank"/.test(arBig("___ جَدٌّ.")) && /class="big ar"/.test(arBig("أَنَا")));
+    check("pilihan Arab sahaja dibungkus sendiri, pilihan Melayu tidak", isArOpt("أَنَا") && /class="ar"/.test(optHTML("أَنَا")) && !isArOpt("saya") && !/class="ar"/.test(optHTML("saya")));
+    check("pilihan campuran guna « »", /class="ar"/.test(optHTML("huruf «ل»")) && !isArOpt("huruf «ل»"));
+    check("pilihan campuran tanpa « » dikesan sebagai teks Arab di luar span", arOutside(optHTML("huruf ل")));
+    check("pembayang membawa gambar kalau ada", /class="em-s"/.test(hintHTML({ pic: "🐪", h: "x" })) && !/em-s/.test(hintHTML({ h: "x" })));
+    check("HTML dalam teks Arab dilarikan", qHTML("«<b>أَنَا</b>»").indexOf("&lt;b&gt;") > 0);
+    check("pembilang Arab-Indic dalam pilihan dikenali sebagai Arab", isArOpt("١٢"));
+
+    /* ---------- 3. halaman itu sendiri ---------- */
+    store = { best: {}, learnt: [], muted: true, student: null, slips: [], reqs: [] };
+    init();
+    check("laman utama dipaparkan", !$("home").hidden && $("quiz").hidden && $("results").hidden);
+    check("empat kad unit pada laman utama", $("units").querySelectorAll("[data-unit]").length === 4);
+    check("satu tajuk buku teks dipaparkan", $("units").querySelectorAll(".theme-h").length === 1);
+    check("setiap kad unit memaparkan tajuk Arabnya", $("units").querySelectorAll(".unit .uar[lang=ar][dir=rtl]").length === 4);
+    check("perarakan memaparkan setiap watak", $("parade").querySelectorAll("svg").length === PARADE.length);
+    check("butang rampaian memaparkan tiga watak", $("mix-trio").querySelectorAll("svg").length === 3);
+    check("frasa Arab di laman utama dilukis kanan-ke-kiri", !!document.querySelector(".hero-ar[lang=ar][dir=rtl]"));
+    check("pembilang soalan dikuasai bermula pada sifar daripada 80", $("st-learnt").textContent === "0" && $("st-total").textContent === "80");
+    check("nota unit menyebut soalan KBAT", /KBAT/.test($("units-note").textContent), $("units-note").textContent);
+    check("nota privasi ada pada halaman", /pelayar ini sahaja/i.test(document.querySelector(".foot .privacy").textContent));
+    check("tandatangan jantung berdegup ada pada halaman, dalam bahasa Inggeris", /^made with .+ by Izanin Sofya$/.test(document.querySelector(".credit").textContent.replace(/\s+/g, " ").trim()) && !!document.querySelector(".credit .heart"), document.querySelector(".credit").textContent.trim());
+    check("tajuk halaman ialah Kuiz Bahasa Arab Tahun 2", document.querySelector(".hero h1").textContent.replace(/\s+/g, " ").trim() === "Kuiz Bahasa Arab Tahun 2", document.querySelector(".hero h1").textContent.trim());
+    check("perenggan hero ialah seruan kepada murid", /^Uji kefahaman kamu unit demi unit\./.test(document.querySelector(".hero p").textContent.trim()), document.querySelector(".hero p").textContent.trim());
+    check("sumber buku teks dinyatakan", /Dewan Bahasa dan Pustaka/.test(document.querySelector(".source").textContent));
+
+    /* --- main Unit 4 dan jawab semuanya betul --- */
+    $("units").querySelectorAll("[data-unit]")[3].click();
+    check("satu unit membuka skrin kuiz", !$("quiz").hidden && $("home").hidden);
+    check("fokus berpindah ke kuiz", document.activeElement === $("quiz"), document.activeElement && document.activeElement.id);
+    check("satu pusingan unit ada dua puluh soalan", S.items.length === 20, S.items.length);
+    check("pusingan unit mengandungi soalan KBAT", S.items.filter((it) => QOF(it).k).length === 4, S.items.filter((it) => QOF(it).k).length);
+    check("kesemua soalan daripada unit itu", S.items.every((it) => it.u === 3));
+    check("soalan memaparkan empat jawapan", opts().length === 4);
+    check("jawapan berlabel A hingga D", opts().map((b) => b.querySelector(".k").textContent).join("") === "ABCD");
+    check("jawapan betul tidak sentiasa di tempat yang sama", S.items.some((it) => it.order[0] !== 0));
+    check("butang Seterusnya bermula dalam keadaan mati", $("btn-next").disabled);
+
+    $("btn-hint").click();
+    check("pembayang muncul apabila diminta", !$("q-hint").hidden && $("q-hint-text").textContent === (QOF(S.items[0]).pic || "") + QOF(S.items[0]).h.replace(/[«»]/g, ""), $("q-hint-text").textContent);
+    check("pembayang hanya boleh diambil sekali", $("btn-hint").disabled);
+
+    clickRight();
+    check("jawapan betul ditandakan betul", opts().find((b) => Number(b.dataset.oi) === 0).classList.contains("right"));
+    check("penerangan muncul selepas menjawab", !$("q-why").hidden && /Ya, betul/.test($("q-why").textContent));
+    check("penerangan menunjukkan halaman buku teks", /hlm\./.test($("q-why").textContent), $("q-why").querySelector(".pg") && $("q-why").querySelector(".pg").textContent);
+    check("Seterusnya hidup selepas menjawab", !$("btn-next").disabled);
+    check("menjawab dua kali tidak mengubah apa-apa", (() => { const before = S.score; clickWrong(); return S.score === before; })());
+    check("soalan yang dijawab dengan pembayang tidak dikira dikuasai", store.learnt.length === 0, store.learnt.length);
+
+    $("btn-next").click();
+    check("Seterusnya berpindah ke soalan dua", S.cur === 1 && $("q-count").textContent === "2/20");
+    check("soalan KBAT memaparkan lencana KBAT", (() => { const at = S.items.findIndex((it) => QOF(it).k); if (at < 0) return false; const keep = S.cur; S.cur = at; renderQuestion(); const on = !!$("q-topic").querySelector(".kbat"); S.cur = keep; renderQuestion(); return on; })());
+    check("soalan berbaris Arab memaparkan baris Arab besar", (() => { const at = S.items.findIndex((it) => QOF(it).ar); if (at < 0) return false; const keep = S.cur; S.cur = at; renderQuestion(); const on = !$("q-show").hidden && !!$("q-show").querySelector(".big.ar[lang=ar][dir=rtl]"); S.cur = keep; renderQuestion(); return on; })());
+    check("soalan tanpa baris Arab menyembunyikan ruang paparan", (() => { const at = S.items.findIndex((it) => !QOF(it).ar && !QOF(it).em); if (at < 0) return false; const keep = S.cur; S.cur = at; renderQuestion(); const on = $("q-show").hidden; S.cur = keep; renderQuestion(); return on; })());
+    check("pilihan Arab dilukis kanan-ke-kiri dan berpusat", (() => { const at = S.items.findIndex((it) => isArOpt(QOF(it).o[0])); if (at < 0) return false; const keep = S.cur; S.cur = at; renderQuestion(); const on = !!$("q-opts").querySelector(".opt.arc .t .ar[lang=ar][dir=rtl]"); S.cur = keep; renderQuestion(); return on; })());
+    check("pilihan Melayu tidak dilukis sebagai Arab", (() => { const at = S.items.findIndex((it) => !isArOpt(QOF(it).o[0]) && !/«/.test(QOF(it).o[0])); if (at < 0) return false; const keep = S.cur; S.cur = at; renderQuestion(); const on = !$("q-opts").querySelector(".opt .t .ar") && !$("q-opts").querySelector(".opt.arc"); S.cur = keep; renderQuestion(); return on; })());
+    check("lencana KBAT kecil, sebaris dan terang (bukan jalur lebar berwarna pudar)", (() => { const at = S.items.findIndex((it) => QOF(it).k); if (at < 0) return false; const keep = S.cur; S.cur = at; renderQuestion(); const el = $("q-topic").querySelector(".kbat"); const cs = getComputedStyle(el); const on = cs.display === "inline-block" && el.getBoundingClientRect().width < 90 && cs.color === "rgb(42, 18, 32)"; S.cur = keep; renderQuestion(); return on; })());
+    check("Arab dalam tajuk kecil kekal sebaris dengan teks Melayu", (() => { const at = S.items.findIndex((it) => /«/.test(QOF(it).s)); if (at < 0) return false; const keep = S.cur; S.cur = at; renderQuestion(); const el = $("q-topic").querySelector(".ar"); const on = !!el && getComputedStyle(el).display === "inline"; S.cur = keep; renderQuestion(); return on; })());
+    check("baris Arab panjang diberi saiz lebih kecil, yang pendek tidak", /class="big ar long"/.test(arBig("الْمِقْلَمَةُ ___ الْحَقِيبَةِ.")) && !/ long"/.test(arBig("أَنَا")));
+    check("tajuk kecil dengan huruf Arab dilukis dalam span Arab", (() => { const at = S.items.findIndex((it) => /«/.test(QOF(it).s)); if (at < 0) return false; const keep = S.cur; S.cur = at; renderQuestion(); const on = !!$("q-topic").querySelector(".ar[lang=ar]"); S.cur = keep; renderQuestion(); return on; })());
+    const rightPos = opts().findIndex((b) => Number(b.dataset.oi) === 0);
+    key(LETTERS[rightPos]);
+    check("kekunci huruf menjawab soalan", S.answered && opts()[rightPos].classList.contains("right"), LETTERS[rightPos]);
+    $("btn-next").click();
+
+    for (let i = 2; i < 20; i++) { clickRight(); $("btn-next").click(); }
+    check("pusingan tamat pada skrin keputusan", !$("results").hidden && $("quiz").hidden);
+    check("setiap jawapan betul dikira", S.score === 20, `${S.score}/${S.items.length}`);
+    check("markah dipaparkan", /\d+\s*\/\s*20/.test($("r-score").textContent.replace(/\s+/g, " ")), $("r-score").textContent);
+    check("tiga bintang menyala untuk pusingan sempurna", $("r-stars").querySelectorAll("svg.lit").length === 3);
+    check("markah terbaik disimpan untuk unit itu", (store.best[UNITS[3].id] || {}).score === 20, JSON.stringify(store.best));
+    check("sembilan belas soalan dikira dikuasai (yang berpembayang tidak dikira)", store.learnt.length === 19, store.learnt.length);
+    check("senarai ulang kaji dipaparkan", $("r-review").querySelectorAll("li").length > 0);
+    const qblank = (() => { const el = document.createElement("p"); el.className = "qtext"; el.innerHTML = qHTML("Raja ___ negara."); $("r-review").appendChild(el); const w = el.querySelector(".blank").offsetWidth; el.remove(); return w; })();
+    check("tempat kosong dilukis sebagai kotak", qblank > 40, qblank);
+
+    /* --- slip keputusan --- */
+    check("kad slip meminta nama dahulu", !$("r-slip").hidden && !!$("slip-form"));
+    $("slip-name").value = "   "; $("slip-class").value = "";
+    check("borang kosong ditolak", submitSlipForm() === false && /nama/i.test($("slip-err").textContent));
+    $("slip-name").value = "  Nur   Aisyah "; $("slip-class").value = "2 Bestari";
+    check("borang yang diisi menghasilkan slip", submitSlipForm() === true);
+    check("ruang berlebihan pada nama dikemaskan", store.slips[0].name === "Nur Aisyah", store.slips[0].name);
+    const slip = store.slips[0];
+    check("slip dipaparkan sebagai tiket", !!$("slip-ticket") && $("slip-code").textContent === slip.code);
+    check("kod semakan berbentuk XXX-XXX", /^[0-9A-Z]{3}-[0-9A-Z]{3}$/.test(slip.code), slip.code);
+    check("pembilang slip bertambah", $("st-slips").textContent === "1", $("st-slips").textContent);
+
+    const text = slipText(slip);
+    check("teks slip bermula dengan tajuknya sendiri", text.split("\n")[0] === SLIP_HEAD);
+    const back = parseSlips(text);
+    check("slip yang ditampal boleh dibaca semula",
+      back.length === 1 && back[0].name === "Nur Aisyah" && back[0].cls === "2 Bestari" && back[0].score === slip.score && back[0].total === slip.total && back[0].hints === slip.hints,
+      JSON.stringify(back[0]));
+    check("slip yang tidak disunting sepadan dengan kodnya", normCode(slipCode(back[0])) === normCode(slip.code));
+    const edited = Object.assign({}, back[0], { score: back[0].score + 1 });
+    check("slip dengan markah yang diubah tidak lagi sepadan", normCode(slipCode(edited)) !== normCode(slip.code));
+    const renamed = Object.assign({}, back[0], { name: "Orang Lain" });
+    check("slip dengan nama yang diubah tidak lagi sepadan", normCode(slipCode(renamed)) !== normCode(slip.code));
+    check("slip yang sengkangnya ditukar masih sepadan",
+      normCode(slipCode(Object.assign({}, back[0], { unit: back[0].unit.replace(/·/g, "-") }))) === normCode(slip.code));
+
+    /* --- penyemak cikgu --- */
+    $("btn-checker").click();
+    check("penyemak terbuka", !$("chk-modal").hidden);
+    $("chk-input").value = text + "\n\n" + slipText(Object.assign({}, slip, { name: "Kaki Tiru" }));
+    $("btn-chk-run").click();
+    const rows = $("chk-out").querySelectorAll("li");
+    check("penyemak membaca dua slip", rows.length === 2, rows.length);
+    check("slip asli ditanda sepadan", rows[0].classList.contains("ok"));
+    check("slip yang ditiru ditanda diubah", rows[1].classList.contains("no"));
+    $("chk-input").value = "hanya satu mesej daripada murid";
+    $("btn-chk-run").click();
+    check("teks yang bukan slip ditolak dengan sopan", /Tiada dijumpai/.test($("chk-out").textContent));
+    $("btn-chk-close").click();
+    check("penyemak tertutup", $("chk-modal").hidden);
+
+    /* --- kembali ke laman utama, kemudian Kuiz Rampaian --- */
+    $("btn-home").click();
+    check("kembali ke laman utama selepas satu pusingan", !$("home").hidden);
+    check("kad unit kini menunjukkan bintang", $("units").querySelectorAll("[data-unit]")[3].querySelectorAll(".stars svg.lit").length === 3);
+    check("kad unit menunjukkan markah terbaik", /terbaik/.test($("units").querySelectorAll("[data-unit]")[3].textContent));
+    check("satu unit mempunyai tiga bintang", $("st-cleared").textContent === "1", $("st-cleared").textContent);
+
+    /* --- slip keputusan saya (fokus dahulu, seperti klik sebenar) --- */
+    $("btn-slips").focus();
+    $("btn-slips").click();
+    check("slip keputusan saya menyenaraikan slip itu", !$("slips-modal").hidden && $("myslips").querySelectorAll("li").length === 1);
+    check("membuka modal memindahkan fokus ke dalamnya", document.activeElement === $("slips-modal").querySelector(".modal-box"), document.activeElement && document.activeElement.className);
+    $("btn-slips-close").click();
+    check("slip keputusan saya tertutup", $("slips-modal").hidden);
+    check("menutup modal mengembalikan fokus ke butang yang membukanya", document.activeElement === $("btn-slips"), document.activeElement && document.activeElement.id);
+
+    const bestBefore = JSON.stringify(store.best);
+    $("btn-mix").click();
+    check("Kuiz Rampaian ada dua puluh soalan", S.items.length === 20, S.items.length);
+    check("Kuiz Rampaian mengambil soalan daripada lebih satu unit", new Set(S.items.map((it) => it.u)).size > 1);
+    check("Kuiz Rampaian menunjukkan unit asal soalan", /Kuiz Rampaian/.test($("q-unit").textContent));
+    playAll(0);
+    check("Kuiz Rampaian tamat dengan keputusan", !$("results").hidden && S.score === 19, S.score);
+    check("jawapan salah disenaraikan untuk ulang kaji", $("r-review").querySelectorAll("li.miss").length === 1);
+    check("Kuiz Rampaian tidak mengubah markah terbaik mana-mana unit", JSON.stringify(store.best) === bestBefore, JSON.stringify(store.best));
+    check("borang slip mengingati nama murid", $("slip-name").value === "Nur Aisyah", $("slip-name").value);
+    check("slip kedua boleh dibuat", submitSlipForm() === true);
+    check("slip baharu menyebut Kuiz Rampaian", /Kuiz Rampaian/.test(store.slips[0].unit), store.slips[0].unit);
+    check("kedua-dua slip disimpan", store.slips.length === 2, store.slips.length);
+
+    $("btn-again").click();
+    check("Main lagi memulakan Kuiz Rampaian yang lain", !$("quiz").hidden && S.mode === "mix" && S.items.length === 20);
+    key("Escape");
+    check("Escape kembali ke laman utama", !$("home").hidden);
+
+    /* --- butang segar semula perlu dua tekanan --- */
+    const learntBefore = store.learnt.length;
+    $("btn-reset").click();
+    check("satu tekanan pada butang segar semula tidak mengubah apa-apa", store.learnt.length === learntBefore && Object.keys(store.best).length === 1);
+    check("butang segar semula meminta anda tekan sekali lagi", /sekali lagi/i.test($("btn-reset").getAttribute("aria-label")));
+    $("btn-reset").click();
+    check("tekanan kedua mengosongkan bintang", store.learnt.length === 0 && Object.keys(store.best).length === 0);
+    check("slip dikekalkan apabila kemajuan dikosongkan", store.slips.length === 2);
+    check("pembilang kembali ke sifar", $("st-learnt").textContent === "0" && $("st-cleared").textContent === "0");
+
+    /* --- menyimpan dan memuat semula --- */
+    saveStore();
+    const reloaded = loadStore();
+    check("data yang disimpan boleh dibaca semula", reloaded.slips.length === 2 && reloaded.slips.some((x) => x.code === slip.code));
+
+    /* ---------- 4. minta kuiz baharu ---------- */
+    const tick = () => new Promise((r) => setTimeout(r, 0));
+    /* Ujian ini mesti lulus sama ada REQUEST_URL sudah diisi atau belum. */
+    const reqOn = !!REQUEST_URL;
+    check("borang permintaan ditunjukkan tepat apabila REQUEST_URL diisi",
+      $("req-entry").hidden === !reqOn && $("req-ask").hidden === !reqOn, "REQUEST_URL " + (reqOn ? "diisi" : "kosong"));
+    check("nota privasi sepadan dengan keadaan borang",
+      reqOn ? /menekan hantar/i.test($("privacy-send").textContent)
+            : /tiada apa-apa dihantar/i.test($("privacy-send").textContent));
+
+    const sent = [];
+    let offline = false;
+    REQ.url = "https://example.invalid/minta";
+    REQ.send = (payload) => offline ? Promise.reject(new Error("luar talian")) : (sent.push(payload), Promise.resolve());
+    renderRequestEntry();
+    check("borang permintaan muncul setelah URL dipasang", !$("req-entry").hidden && !$("req-ask").hidden);
+    check("nota privasi mengaku borang itu meninggalkan peranti", /menekan hantar/i.test($("privacy-send").textContent));
+
+    $("req-entry").querySelector("[data-open-request]").click();
+    check("borang permintaan terbuka dari kaki halaman", !$("req-modal").hidden);
+    check("membuka borang memindahkan fokus ke dalamnya",
+      document.activeElement === $("req-modal").querySelector(".modal-box"));
+
+    check("borang kosong ditolak", submitRequestForm() === false && /subjek/i.test($("req-err").textContent));
+    $("req-subject").value = "Matematik";
+    check("tahap masih diperlukan", submitRequestForm() === false && /tahap/i.test($("req-err").textContent));
+    $("req-level").value = "Tahun 4";
+    $("req-email").value = "bukan-emel";
+    check("e-mel yang tidak lengkap ditolak", submitRequestForm() === false && /e-mel/i.test($("req-err").textContent));
+    $("req-email").value = "";
+    $("req-topic").value = "  Unit 3   —  Pecahan ";
+    $("req-role").value = "Guru";
+    $("req-note").value = "Tolong buat yang ada soalan KBAT.";
+    check("subjek dan tahap sudah cukup untuk menghantar", submitRequestForm() === true);
+    check("borang tertutup setelah dihantar", $("req-modal").hidden);
+    check("borang dikosongkan setelah dihantar", $("req-subject").value === "" && $("req-note").value === "");
+    await tick();
+    check("satu permintaan dihantar", sent.length === 1, sent.length);
+    const rq = sent[0] || {};
+    check("permintaan membawa nama kuiz ini", rq.source === "kuiz-bahasa-arab-tahun2", rq.source);
+    check("permintaan membawa subjek dan tahap", rq.subject === "Matematik" && rq.level === "Tahun 4");
+    check("ruang berlebihan dalam topik dirapikan", rq.topic === "Unit 3 — Pecahan", rq.topic);
+    check("peranan dan catatan dibawa bersama", rq.role === "Guru" && /KBAT/.test(rq.note || ""));
+    check("permintaan tidak membawa nama, kelas, markah atau slip",
+      !("name" in rq) && !("cls" in rq) && !("score" in rq) && !("code" in rq));
+    check("e-mel yang dibiarkan kosong kekal kosong", rq.email === "", JSON.stringify(rq.email));
+    check("permintaan bertarikh", /^\d{4}-\d{2}-\d{2}T/.test(rq.at || ""), rq.at);
+    check("baris gilir kosong setelah berjaya dihantar", store.reqs.length === 0, store.reqs.length);
+
+    /* --- perangkap robot --- */
+    $("req-subject").value = "Sains"; $("req-level").value = "Tahun 6";
+    $("req-web").value = "https://spam.example";
+    check("perangkap robot berlagak berjaya", submitRequestForm() === true);
+    await tick();
+    check("perangkap robot tidak menghantar apa-apa",
+      sent.length === 1 && store.reqs.length === 0, sent.length + "/" + store.reqs.length);
+
+    /* --- luar talian: simpan dan cuba lagi --- */
+    offline = true;
+    $("req-subject").value = "Geografi"; $("req-level").value = "Tingkatan 1";
+    check("permintaan luar talian tetap diterima", submitRequestForm() === true);
+    await tick();
+    check("permintaan luar talian disimpan pada peranti",
+      store.reqs.length === 1 && store.reqs[0].subject === "Geografi", store.reqs.length);
+    check("baris gilir bertahan selepas muat semula", (loadStore().reqs || []).length === 1);
+    offline = false;
+    check("baris gilir dihantar apabila dalam talian semula",
+      (await flushRequests()) === 0 && sent.length === 2, sent.length);
+
+    /* --- baris gilir tidak membesar tanpa had --- */
+    offline = true;
+    for (let i = 0; i < REQ.cap + 4; i++) {
+      queueRequest({ v: 1, source: REQ.source, subject: "Sejarah", level: "Tahun 5", at: "t" + i });
+    }
+    await tick();
+    check("baris gilir dihadkan", store.reqs.length === REQ.cap, store.reqs.length);
+    check("permintaan terbaharu yang dikekalkan",
+      store.reqs[store.reqs.length - 1].at === "t" + (REQ.cap + 3), store.reqs[store.reqs.length - 1].at);
+    store.reqs = []; saveStore(); offline = false;
+
+    /* --- medan panjang dipendekkan sebelum dihantar --- */
+    $("req-subject").value = "Sejarah"; $("req-level").value = "Tahun 5";
+    $("req-topic").value = "u".repeat(200); $("req-note").value = "n".repeat(500);
+    check("permintaan bermedan panjang diterima", submitRequestForm() === true);
+    await tick();
+    const big = sent[sent.length - 1] || {};
+    check("topik dihadkan kepada 80 aksara", (big.topic || "").length === 80, (big.topic || "").length);
+    check("catatan dihadkan kepada 300 aksara", (big.note || "").length === 300, (big.note || "").length);
+
+    /* --- dibuka dari skrin keputusan, ditutup dengan Escape --- */
+    $("req-ask").querySelector("[data-open-request]").click();
+    check("borang boleh dibuka dari skrin keputusan", !$("req-modal").hidden);
+    key("Escape");
+    check("Escape menutup borang permintaan", $("req-modal").hidden);
+
+    check("setiap pilihan subjek dan tahap ada", $("req-subject").options.length === 12 && $("req-level").options.length === 14,
+      $("req-subject").options.length + "/" + $("req-level").options.length);
+    check("kuiz ini sendiri tersenarai sebagai pilihan",
+      Array.from($("req-level").options).some((o) => o.value === "Tahun 2") &&
+      Array.from($("req-subject").options).some((o) => o.value === "Bahasa Arab"));
+    check("borang tidak meminta nama, kelas atau sekolah",
+      !/nama|kelas|sekolah/i.test(Array.from($("req-form").querySelectorAll("label")).map((l) => l.textContent).join(" ")));
+    REQ.url = REQUEST_URL; REQ.send = postRequest;
+    store.reqs = []; saveStore(); renderRequestEntry();
+
+    /* ---------- 5. bunyi ---------- */
+    if (window.OfflineAudioContext) {
+      for (const name of Object.keys(SOUNDS)) {
+        try {
+          const oc = new OfflineAudioContext(1, 44100, 44100);
+          SOUNDS[name](oc, 0);
+          const data = (await oc.startRendering()).getChannelData(0);
+          let peak = 0; for (let i = 0; i < data.length; i++) peak = Math.max(peak, Math.abs(data[i]));
+          check(`bunyi "${name}" boleh didengar`, peak > 0.01, peak.toFixed(3));
+        } catch (e) { check(`bunyi "${name}" dihasilkan`, false, e.message); }
+      }
+    } else check("OfflineAudioContext tersedia", false);
+
+    /* ---------- laporan ---------- */
+    const pass = results.filter((r) => r.ok).length;
+    const fails = results.filter((r) => !r.ok);
+    const text2 = `SELFTEST_RESULT: ${fails.length ? "FAIL" : "PASS"} ${pass}/${results.length}` +
+      (fails.length ? "\n" + fails.map((f) => `  x ${f.name}${f.info ? " — " + f.info : ""}`).join("\n") : "");
+    document.title = `SELFTEST ${fails.length ? "FAIL" : "PASS"} ${pass}/${results.length}`;
+    const pre = document.createElement("pre");
+    pre.id = "selftest-result"; pre.textContent = text2;
+    document.body.appendChild(pre);
+    console.log(text2);
+  }
+  run().catch((e) => {
+    const pre = document.createElement("pre");
+    pre.id = "selftest-result"; pre.textContent = "SELFTEST_RESULT: CRASH " + ((e && e.stack) || e);
+    document.body.appendChild(pre);
+    document.title = "SELFTEST CRASH";
+    console.log(pre.textContent);
+  });
+})();
+</script>
+</body>
+</html>
